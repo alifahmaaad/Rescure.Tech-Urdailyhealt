@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/pricelist', function () {
     return view('customers/pricelist/index');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('administrators.index');
+})->name('dashboard');
