@@ -1,5 +1,5 @@
 @include('templates.customers.header')
-<div class="gabut" style="background-image: url({{ asset('images/bghomepage.jpg') }});background-size: 100% 100%;background-repeat: no-repeat;">
+<div class="gabut" style="background-image: url({{ asset('assets/images/bghomepage.jpg') }});background-size: 100% 100%;background-repeat: no-repeat;">
     <main class="container pt-5">
         <div id="myCarousel" class="carousel slide py-5" data-ride="carousel">
             </br>
@@ -27,7 +27,7 @@
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <rect width="100%" height="100%" fill="#fff" />
                     </svg>
-                    <img class="responsive" src="{{ asset('images/logo.jpg') }}" alt="">
+                    <img class="responsive" src="{{ asset('assets/images/logo.jpg') }}" alt="">
                     <div class="container">
                         <div class="carousel-caption">
                             <h2>Another example headline.</h2>
@@ -75,7 +75,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="/images/logo.jpg" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
                     </svg> -->
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('images/logo.jpg') }}" alt="">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('assets/images/logo.jpg') }}" alt="">
                 <h2 class="mt-4">Lunch</h2>
                 <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
                 <p><a class="btn btn-secondary" href="#">See Menu</a> <a class="btn btn-secondary" href="#">Order Now &raquo;</a> </p>
@@ -86,7 +86,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
                     </svg> -->
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('images/logo.jpg') }}" alt="">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('assets/images/logo.jpg') }}" alt="">
                 <h2 class="mt-4">Dinner</h2>
                 <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
                 <p><a class="btn btn-secondary" href="#">See Menu</a> <a class="btn btn-secondary" href="#">Order Now &raquo;</a> </p>
@@ -112,13 +112,13 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
                     <div id="imgarticle" class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('images/image1.jpg') }}" alt="">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('assets/images/image1.jpg') }}" alt="">
                         </div>
                         <div class="carousel-item">
-                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('images/image1.jpg') }}" alt="">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('assets/images/image1.jpg') }}" alt="">
                         </div>
                         <div class="carousel-item">
-                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('images/image1.jpg') }}" alt="">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('assets/images/image1.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
                     </svg> -->
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('images/image1.jpg') }}" alt="">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('assets/images/image1.jpg') }}" alt="">
 
             </div>
         </div>
@@ -155,7 +155,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
                     </svg> -->
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('images/image1.jpg') }}" alt="">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" width="500" height="500" src="{{ asset('assets/images/image1.jpg') }}" alt="">
 
             </div>
         </div>

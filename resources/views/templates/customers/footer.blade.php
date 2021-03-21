@@ -7,7 +7,7 @@
             <!-- Google -->
             <a class="btn  btn-outline-light  rounded-circle" style="background-color: #25d366;" href="#!" role="button" data-toggle="modal" data-target="#testss"><i class="fab fa-whatsapp"></i></a>
             <!-- Instagram -->
-            <a class="btn btn-outline-light rounded-circle  " style="background-image: url({{ asset('images/igbg.jpg') }});background-size: cover" href="https://www.instagram.com/urdailyhealth/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light rounded-circle  " style="background-image: url({{ asset('assets/images/igbg.jpg') }});background-size: cover" href="https://www.instagram.com/urdailyhealth/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
 
         </section>
         <!-- Section: Social media -->

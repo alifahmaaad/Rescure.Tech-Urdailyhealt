@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UrdailyHealth</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <style>
@@ -25,7 +25,7 @@
             height: auto;
         }
     </style>
-    <link rel="icon" href="{{ asset('images/logo.jpg') }}" />
+    <link rel="icon" href="{{ asset('assets/images/logo.jpg') }}" />
     <style>
         .navbar-nav>li>.dropdown-menu a:active,
         .navbar-nav>li>.dropdown-menu a:hover {
@@ -59,7 +59,7 @@
             <nav class="navbar navbar-expand-md fixed ">
                 <div class="container ">
                     <div class="col">
-                        <a href="home"><img class="bd-placeholder-img rounded-circle" style="height: 75px; width: 75px" src="{{ asset('images/logo.jpg') }}" class=" img-fluid "></a>
+                        <a href="home"><img class="bd-placeholder-img rounded-circle" style="height: 75px; width: 75px" src="{{ asset('assets/images/logo.jpg') }}" class=" img-fluid "></a>
                     </div>
                     <button class="navbar-toggler navbar-dark  " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
