@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('administrators.index');
+// })->name('dashboard');
+
 Route::get('/', function () {
     return view('customers/home/index');
 });
@@ -20,6 +25,6 @@ Route::get('/pricelist', function () {
     return view('customers/pricelist/index');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('administrators.index');
-})->name('dashboard');
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/dashboard', [DashboardsController::class, 'index']);
+});
