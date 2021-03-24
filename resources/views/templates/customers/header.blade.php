@@ -85,7 +85,7 @@
                             <li class="nav-item  px-3 dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Admin</a>
                                 <ul style="background-color: white;" class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <li><a class="dropdown-item" href="#">Login</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('login') }}">Login</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item px-3 pt-1">
