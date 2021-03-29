@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardsController;
+use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\MenusController;
+use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +31,8 @@ Route::get('/pricelist', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);
+    Route::get('/article', [ArticlesController::class, 'index']);
+    Route::get('/menu', [MenusController::class, 'index']);
+    Route::get('/testi', [TestimonialsController::class, 'index']);
+    Route::get('/user', [UsersController::class, 'index']);
 });
