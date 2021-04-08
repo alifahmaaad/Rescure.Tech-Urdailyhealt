@@ -75,7 +75,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="/images/logo.jpg" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
                     </svg> -->
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('assets/images/logo.jpg') }}" alt="">
+                <img class="bd-placeholder-img " width="200" height="200" src="{{ asset('assets/images/logo.jpg') }}" alt="">
                 <h2 class="mt-4">Lunch</h2>
                 <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
                 <p><a class="btn btn-secondary" href="#">See Menu</a> <a class="btn btn-secondary" href="#">Order Now &raquo;</a> </p>
@@ -86,7 +86,7 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
                     </svg> -->
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ asset('assets/images/logo.jpg') }}" alt="">
+                <img class="bd-placeholder-img " width="200" height="200" src="{{ asset('assets/images/logo.jpg') }}" alt="">
                 <h2 class="mt-4">Dinner</h2>
                 <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
                 <p><a class="btn btn-secondary" href="#">See Menu</a> <a class="btn btn-secondary" href="#">Order Now &raquo;</a> </p>
@@ -170,3 +170,21 @@
 
 <!-- FOOTER -->
 @include('templates.customers.footer')
+<script>
+    var mq = window.matchMedia("(max-width: 40em)");
+    $(document).ready(function() {
+        if (!mq.matches) {
+            $("nav").css("background-color", "transparent");
+            $(window).scroll(function() { // check if scroll event happened
+                if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+                    $("nav").css("transition", "background-color 200ms linear");
+                    $("nav").css("background-color", "#f1bbbc"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+                } else {
+                    $("nav").css("background-color", "transparent"); // if not, change it back to transparent
+                }
+            });
+        } else {
+            $("nav").css("background-color", "#f1bbbc");
+        }
+    });
+</script>
