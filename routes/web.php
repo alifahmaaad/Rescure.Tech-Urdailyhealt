@@ -28,6 +28,9 @@ Route::get('/', function () {
 Route::get('/pricelist', function () {
     return view('customers/pricelist/index');
 });
+Route::get('/about_us', function () {
+    return view('customers/about_us/index');
+});
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);

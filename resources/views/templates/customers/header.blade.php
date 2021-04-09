@@ -78,7 +78,7 @@
                                 <a class="nav-link " href="#">Article</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="#">About Us!</a>
+                                <a class="nav-link " href="about_us">About Us!</a>
                             </li>
                             <li class="nav-item px-3">
                                 <a class="nav-link " href="#">FAQ</a>
