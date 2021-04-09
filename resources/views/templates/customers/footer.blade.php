@@ -2,7 +2,7 @@
     <!-- Grid container -->
     <div class="container p-4 pb-0">
         <!-- Section: Social media -->
-        <section class="mb-4">
+        <section class="contact-footer">
             <a style="color:#335343;"><i>Contact Us :</i></a>
             <!-- Google -->
             <a class="btn  btn-outline-light  rounded-circle" style="background-color: #25d366;" href="#!" role="button" data-toggle="modal" data-target="#testss"><i class="fab fa-whatsapp"></i></a>
@@ -45,23 +45,5 @@
 </div>
 
 </body>
-<script>
-    var mq = window.matchMedia("(max-width: 40em)");
-    $(document).ready(function() {
-        if (!mq.matches) {
-            $("nav").css("background-color", "transparent");
-            $(window).scroll(function() { // check if scroll event happened
-                if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
-                    $("nav").css("transition", "background-color 200ms linear");
-                    $("nav").css("background-color", "#f1bbbc"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
-                } else {
-                    $("nav").css("background-color", "transparent"); // if not, change it back to transparent
-                }
-            });
-        } else {
-            $("nav").css("background-color", "#f1bbbc");
-        }
-    });
-</script>
 
 </html>

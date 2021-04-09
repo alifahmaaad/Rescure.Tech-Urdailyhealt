@@ -6,152 +6,198 @@
   margin-top: 0; 
 } */
 .bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 @media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-
-  }
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
 
-  
-.btn-secondary:visited{
+.btn-secondary:visited {
+    background-color: #f1bbbc;
+    border-color: #f1bbbc;
+}
+.btn-secondary {
+    background-color: #f1bbbc;
+    border-color: #f1bbbc;
+}
+.btn-secondary:active {
     background-color: #f1bbbc;
     border-color: #f1bbbc;
 }
 
 body {
     color: #5a5a5a;
-  }
-  
-  .nav-link{
+}
+
+.nav-link {
     text-decoration: none;
     color: #335343;
     font-size: 18px;
-  }
-  .nav-link:hover{
-   color: #74a49c;
-  }
-  
-  /* CUSTOMIZE THE CAROUSEL
+}
+.nav-link:hover {
+    color: #74a49c;
+}
+
+/* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
-  
-  /* Carousel base class */
-  /* .carousel {
+
+/* Carousel base class */
+/* .carousel {
   /* margin-bottom: 4rem; */
-  /* } */
-  /* Since positioning the image, we need to help out the caption */
-  .carousel-caption {
+/* } */
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
     bottom: 3rem;
     z-index: 10;
-  }
-  
-  /* Declare heights because of positioning of img element */
- #headcarousel {
+}
+
+/* Declare heights because of positioning of img element */
+#headcarousel {
     height: 32rem;
-  }
-  
-  #headcarousel > img {
+}
+
+#headcarousel > img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 32rem;
-  }
-  
-  
-  /* MARKETING CONTENT
+}
+
+/* MARKETING CONTENT
   -------------------------------------------------- */
-  
-  /* Center align the text within the three columns below the carousel */
-  .marketing .col-lg-4 {
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
     /* margin-bottom: 1.5rem; */
     text-align: center;
-  }
-  .marketing h2 {
+}
+.marketing h2 {
     font-weight: 400;
-  }
-  /* rtl:begin:ignore */
-  .marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
-  }
-  /* rtl:end:ignore */
-  
-  
-  /* Featurettes
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+}
+/* rtl:end:ignore */
+
+/* Featurettes
   ------------------------- */
-  
-  .featurette-divider {
-    margin: 2rem 0; 
+
+.featurette-divider {
+    margin: 2rem 0;
     /* Space out the Bootstrap <hr> more */
-  }
-  
-  /* Thin out the marketing headings */
-  .featurette-heading {
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
     font-weight: 300;
     line-height: 1;
     /* rtl:remove */
-    letter-spacing: -.05rem;
-  }
-  .carousel-caption p,h2{
-    color:black;
-  }
-  .carousel-caption h2{
-    color:black;
-  }
-  .carousel-control-next-icon,
-.carousel-control-prev-icon {
-  filter: invert(0.3);
+    letter-spacing: -0.05rem;
 }
-  
-  /* RESPONSIVE CSS
+.carousel-caption p,
+h2 {
+    color: black;
+}
+.carousel-caption h2 {
+    color: black;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(0.3);
+}
+.testicontent {
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.captiontesti {
+    margin: auto;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+.testitittle {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.05rem;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+#Testimoni {
+    width: 100%;
+    height: 300px;
+}
+.headertesti {
+    font-weight: 400;
+}
+.link {
+    text-decoration: none;
+    color: #335343;
+    font-size: 18px;
+}
+.link:hover {
+    color: #74a49c;
+}
+/* RESPONSIVE CSS
   -------------------------------------------------- */
-  
-  @media (min-width: 40em) {
+
+@media (min-width: 40em) {
     /* Bump up size of carousel content */
     .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-     
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
     }
     .featurette-heading {
-      font-size: 50px;
+        font-size: 50px;
     }
-    
-  }
-  
-  @media (min-width: 62em) {
+}
+
+@media (min-width: 62em) {
     .featurette-heading {
-      margin-top: 7rem;
+        margin-top: 7rem;
     }
-  }
-  
-  @media (max-width: 40em) {
-    .carousel-caption  {
-   margin-bottom: -40px;
+}
+
+@media (max-width: 40em) {
+    .carousel-caption {
+        margin-bottom: -40px;
     }
     .carousel-caption p {
-      font-size: 12px;
-      line-height: 1.4;
+        font-size: 12px;
+        line-height: 1.4;
     }
     #headcarousel {
-      height: 15rem;
-    }
-    
-    #headcarousel > img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 15rem;
+        height: 15rem;
     }
 
-  }
+    #headcarousel > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 15rem;
+    }
+    .captiontesti {
+        margin: auto;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .testitittle {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .headertesti {
+        font-weight: 400;
+        font-size: 40px;
+    }
+}
