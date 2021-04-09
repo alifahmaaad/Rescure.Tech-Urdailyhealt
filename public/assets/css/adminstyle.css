@@ -1,0 +1,9 @@
+.header {
+    justify-content: center;
+}
+.content-wrapper {
+    background-image: url(../images/urdailyhealth.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px;
+}
