@@ -1,9 +1,7 @@
 @extends('templates.administrators.adminlte')
+@section('title', 'List Testimonials')
 @section('main')
 <div class="container">
-    <div class="row header">
-        <h1 class="mt-3">All Testimonials</h1>
-    </div>
     <div class="row">
         <button type="button" class="btn btn-success">Create</button>
     </div>
@@ -17,7 +15,7 @@
                     <th scope="col">Picture</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody>
                 <tr>
                     <th scope="col">1</th>
@@ -55,8 +53,8 @@
                         </div>
                     </td>
                 </tr>
-            </tbody>   
+            </tbody>
         </table>
     </div>
-</div>   
+</div>
 @endsection

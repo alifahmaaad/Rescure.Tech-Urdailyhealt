@@ -31,7 +31,12 @@ Route::get('/pricelist', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);
+    // Articles Controller
     Route::get('/article', [ArticlesController::class, 'index']);
+    Route::get('/create', [ArticlesController::class, 'create']);
+    Route::post('/articles/store', [ArticlesController::class, 'store']);
+
+    // Menus Controller
     Route::get('/menu', [MenusController::class, 'index']);
     Route::get('/testi', [TestimonialsController::class, 'index']);
     Route::get('/user', [UsersController::class, 'index']);

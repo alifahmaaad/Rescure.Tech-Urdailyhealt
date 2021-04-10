@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticlesController extends Controller
 {
@@ -23,7 +24,7 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.articles.create');
     }
 
     /**
@@ -34,7 +35,14 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = Article::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'thumbnail' => $request->thumbnail,
+            'content' => $request->content
+        ]);
+
+        return redirect()->back();
     }
 
     /**
