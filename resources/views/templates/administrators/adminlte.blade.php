@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/menu') }}" class="nav-link active">
+                                    <a href="{{ url('/menus') }}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Menus</p>
                                     </a>
@@ -130,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/article') }}" class="nav-link active">
+                                    <a href="{{ url('/articles') }}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Articles</p>
                                     </a>

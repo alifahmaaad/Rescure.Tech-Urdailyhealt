@@ -38,9 +38,8 @@ Route::get('/faq', function () {
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);
     // Articles Controller
-    Route::get('/article', [ArticlesController::class, 'index']);
-    Route::get('/create', [ArticlesController::class, 'create']);
-    Route::post('/articles/store', [ArticlesController::class, 'store']);
+
+    Route::resource('/articles', ArticlesController::class);
 
     // Menus Controller
     Route::get('/menu', [MenusController::class, 'index']);

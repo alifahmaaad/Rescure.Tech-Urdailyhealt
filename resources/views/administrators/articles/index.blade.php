@@ -3,7 +3,7 @@
 @section('main')
 <div class="container">
     <div class="row">
-        <a href="{{ url('create') }}" type="button" class="btn btn-success">Create</a>
+        <a href="{{ url('articles/create') }}" type="button" class="btn btn-success">Create</a>
     </div>
     <div class="row">
         <table class="table table-light table-striped table-hover table-bordered">
