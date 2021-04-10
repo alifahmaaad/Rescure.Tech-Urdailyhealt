@@ -48,18 +48,11 @@ body {
 
 /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
-
-/* Carousel base class */
-/* .carousel {
-  /* margin-bottom: 4rem; */
-/* } */
-/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     bottom: 3rem;
     z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
 #headcarousel {
     height: 32rem;
 }
@@ -72,37 +65,26 @@ body {
     height: 32rem;
 }
 
-/* MARKETING CONTENT
-  -------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
+/* HOME PAGE*/
 .marketing .col-lg-4 {
-    /* margin-bottom: 1.5rem; */
     text-align: center;
 }
 .marketing h2 {
     font-weight: 400;
 }
-/* rtl:begin:ignore */
+
 .marketing .col-lg-4 p {
     margin-right: 0.75rem;
     margin-left: 0.75rem;
 }
-/* rtl:end:ignore */
-
-/* Featurettes
-  ------------------------- */
 
 .featurette-divider {
     margin: 2rem 0;
-    /* Space out the Bootstrap <hr> more */
 }
 
-/* Thin out the marketing headings */
 .featurette-heading {
     font-weight: 300;
     line-height: 1;
-    /* rtl:remove */
     letter-spacing: -0.05rem;
 }
 .carousel-caption p,
@@ -116,6 +98,7 @@ h2 {
 .carousel-control-prev-icon {
     filter: invert(0.3);
 }
+
 .testicontent {
     top: 50%;
     transform: translateY(-50%);
@@ -153,6 +136,9 @@ h2 {
 .link:hover {
     color: #74a49c;
 }
+/* END HOME PAGE*/
+
+/* ABOUT US PAGE  */
 .aboutustittle {
     color: #335343;
 }
@@ -166,6 +152,9 @@ h2 {
 .aboutus .contact {
     padding-bottom: 50px;
 }
+/* END ABOUT US PAGE  */
+
+/* PRICELIST PAGE */
 .pricelist .row {
     padding-bottom: 25px;
     padding-top: 25px;
@@ -196,6 +185,67 @@ h2 {
 .owl-nav button {
     width: 20px;
 }
+/* END PRICELIST PAGE */
+
+/* FAQ PAGE */
+.faq h1 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.faq .faq-sec .question {
+    border-width: 8px !important;
+    border-color: #f1bbbc !important;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 75px;
+    text-align: left;
+}
+.faq .faq-sec .question .queslogo {
+    width: 8%;
+}
+.faq .faq-sec .question .quescontent p {
+    margin: 0;
+    font-weight: 600;
+}
+.faq .faq-sec .question .queslogo h1 {
+    padding: 0;
+    font-size: 50px;
+    margin-left: 10px;
+    color: #f1bbbc;
+}
+.faq .faq-sec .question .quescontent {
+    width: 92%;
+}
+
+.faq .faq-sec .answer {
+    margin-top: 5px;
+    border-width: 8px !important;
+    border-color: grey !important;
+    width: 100%;
+    height: 75px;
+    text-align: left;
+}
+.faq .faq-sec .answer .answlogo {
+    width: 8%;
+}
+.faq .faq-sec .answer .answcontent p {
+    margin: 0;
+    font-weight: 600;
+}
+.faq .faq-sec .answer .answlogo h1 {
+    padding: 0;
+    font-size: 50px;
+    margin-left: 10px;
+    color: grey;
+}
+.faq .faq-sec .answer .answcontent {
+    width: 92%;
+}
+.faq .faq-sec {
+    padding-bottom: 30px;
+}
+/* END FAQ PAGE */
+
 /* RESPONSIVE CSS
   -------------------------------------------------- */
 
@@ -272,5 +322,33 @@ h2 {
     }
     .pricelistcontent .carousel-inner .carousel-item img {
         height: 450px;
+    }
+
+    .faq .faq-sec .question,
+    .faq .faq-sec .answer {
+        height: 100px;
+    }
+    .faq .faq-sec .question .queslogo {
+        width: 15%;
+    }
+    .faq .faq-sec .question .queslogo h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        color: #f1bbbc;
+    }
+    .faq .faq-sec .question .quescontent {
+        width: 85%;
+    }
+    .faq .faq-sec .answer .answlogo {
+        width: 15%;
+    }
+
+    .faq .faq-sec .answer .answlogo h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        color: grey;
+    }
+    .faq .faq-sec .answer .answcontent {
+        width: 85%;
     }
 }

@@ -31,6 +31,9 @@ Route::get('/pricelist', function () {
 Route::get('/about_us', function () {
     return view('customers/about_us/index');
 });
+Route::get('/faq', function () {
+    return view('customers/faq/index');
+});
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);

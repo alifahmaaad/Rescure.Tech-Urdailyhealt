@@ -81,7 +81,7 @@
                                 <a class="nav-link " href="about_us">About Us!</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="#">FAQ</a>
+                                <a class="nav-link " href="faq">FAQ</a>
                             </li>
                             <li class="nav-item  px-3 dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Admin</a>
