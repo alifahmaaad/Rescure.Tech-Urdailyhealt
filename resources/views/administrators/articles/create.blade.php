@@ -1,7 +1,10 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'Create Article')
 @section('main')
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
 
 <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data">
     @csrf
@@ -35,11 +38,23 @@
         @enderror
     </div>
 
-    <input class="form-control my-2" type="text" id="content" name="content" placeholder="Input Content" aria-label="default input example">
+    <textarea name="content" id="editor">
+        &lt;p&gt;This is some sample content.&lt;/p&gt;
+    </textarea>
 
     <div class="form-group mt-3">
         <button class="btn btn-primary btn-block">Create</button>
     </div>
 
 </form>
+
+<!-- script -->
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @endsection
