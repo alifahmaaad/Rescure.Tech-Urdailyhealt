@@ -165,8 +165,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <p class="text-center link"><a href="" class="link">See more testimoni...</a></p>
-
         <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->

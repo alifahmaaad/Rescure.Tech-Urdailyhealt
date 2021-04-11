@@ -3,10 +3,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 
-<div class="container text-center" id="pricelist">
-  <div style="padding-top: 70px;">
+<div class="container-fluid text-center" id="pricelist">
+  <div class="row" style="padding-top: 120px;padding-bottom: 40px;">
     <!-- CAROUSEL IMG PRICELIST -->
-    <div id="pricelistcarousel" class="carousel slide py-5 pricelistcontent" data-ride="carousel">
+    <div id="pricelistcarousel" class="col-lg-3 carousel slide  pricelistcontent" data-ride="carousel">
       <div class="carousel-indicators ">
         <li type="button" data-target="#pricelistcarousel" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
         <li type="button" data-target="#pricelistcarousel" data-slide-to="1" aria-label="Slide 2"></li>
@@ -24,22 +24,14 @@
           <img class="img-fluid mx-auto responsive d-block" width="600" src="{{ asset('assets/images/dummyprice.jpeg') }}" alt="">
         </div>
       </div>
-
-
-      <a class="carousel-control-prev" role="button" href="#pricelistcarousel" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" role="button" href="#pricelistcarousel" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden sr-only">Next</span>
-      </a>
       <!-- <div class="carousel-caption text-start">
         <p style="margin-bottom: -10px;"><a class="btn btn-md btn-success" href="#">ORDER NOW</a></p>
       </div> -->
     </div>
     <!-- END CAROUSEL IMG PRICELIST -->
-    <div class="container pricelist border rounded mb-2 ">
+
+    <div class="col-lg-6 container pricelist mb-2 ">
+      <h1>Our Menu On this Week</h1>
       <!-- LUNCH -->
       <div class="row">
         <div class="container judul">
@@ -183,16 +175,42 @@
       </div>
       <!-- END DINNER -->
     </div>
+    <!-- CAROUSEL IMG PRICELIST -->
+    <div id="pricelistcarousel2" class="col-lg-3 carousel slide pricelistcontent" data-ride="carousel">
+      <div class="carousel-indicators ">
+        <li type="button" data-target="#pricelistcarousel" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+        <li type="button" data-target="#pricelistcarousel" data-slide-to="1" aria-label="Slide 2"></li>
+        <li type="button" data-target="#pricelistcarousel" data-slide-to="2" aria-label="Slide 3"></li>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item active">
+          <img class="img-fluid mx-auto responsive d-block" width="600" src="{{ asset('assets/images/dummyprice.jpeg') }}" alt="">
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid mx-auto responsive d-block" width="600" src="{{ asset('assets/images/dummyprice.jpeg') }}" alt="">
+
+        </div>
+        <div class="carousel-item ">
+          <img class="img-fluid mx-auto responsive d-block" width="600" src="{{ asset('assets/images/dummyprice.jpeg') }}" alt="">
+        </div>
+      </div>
+      <!-- <div class="carousel-caption text-start">
+        <p style="margin-bottom: -10px;"><a class="btn btn-md btn-success" href="#">ORDER NOW</a></p>
+      </div> -->
+    </div>
+    <!-- END CAROUSEL IMG PRICELIST -->
   </div>
 </div>
 
 
 <!-- Script -->
 <script>
-  $('.owl-carousel').owlCarousel({
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
     loop: false,
     dots: false,
     margin: 10,
+    nav: true,
     responsiveClass: true,
     navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     responsive: {
