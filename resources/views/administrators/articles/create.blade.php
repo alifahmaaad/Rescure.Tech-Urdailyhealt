@@ -15,14 +15,14 @@
     </div>
     @endif
 
-    <input class="form-control my-2 @error('title') is-invalid @enderror" type="text" id="title" name="title" placeholder="Article Title" aria-label="default input example">
+    <input class="form-control my-3 @error('title') is-invalid @enderror" type="text" id="title" name="title" placeholder="Article Title" aria-label="default input example">
     <div class="invalid-feedback">
         @error('title')
         {{ $message }}
         @enderror
     </div>
 
-    <select class="form-select my-2 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
+    <select class="form-select my-3 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
         <option value="" selected>--- Select Author ---</option>
         <option value="Khoirul Roziq">Khoirul Roziq</option>
         <option value="Andika Pratama">Andika Pratama</option>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Str;
 
 class ArticlesController extends Controller
 {
@@ -44,8 +45,9 @@ class ArticlesController extends Controller
 
         $article = Article::create([
             'title' => $request->title,
+            'slug' => Str::slug($request->title),
             'author' => $request->author,
-            'thumbnail' => $request->thumbnail,
+            'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
             'content' => $request->content
         ]);
 
