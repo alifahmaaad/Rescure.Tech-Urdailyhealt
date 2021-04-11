@@ -1,5 +1,5 @@
 @extends('templates.administrators.adminlte')
-@section('title', 'Create Article')
+@section('title', 'Edit Article')
 @section('main')
 
 
