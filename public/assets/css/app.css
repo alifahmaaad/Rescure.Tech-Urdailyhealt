@@ -101,6 +101,12 @@ footer {
 .featurette-divider {
     margin: 2rem 0;
 }
+.hiddentext {
+    display: inline-block;
+    max-height: 150px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
 
 .featurette-heading {
     font-weight: 300;
@@ -152,6 +158,9 @@ h2 {
     text-decoration: none;
     color: #335343;
     font-size: 18px;
+}
+.readmore a {
+    text-align: right;
 }
 .link:hover {
     color: #74a49c;
@@ -307,6 +316,9 @@ h2 {
     }
 }
 @media (max-width: 40em) {
+    .imgswarticle {
+        width: 350px;
+    }
     .carousel-caption {
         margin-bottom: -40px;
     }
@@ -389,5 +401,15 @@ h2 {
     }
     .faq .faq-sec .answer .answcontent {
         width: 85%;
+    }
+}
+@media (max-width: 23em) {
+    .imgswarticle {
+        width: 280px;
+    }
+}
+@media (max-width: 22em) {
+    .imgswarticle {
+        width: 250px;
     }
 }
