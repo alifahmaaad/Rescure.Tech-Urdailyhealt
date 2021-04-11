@@ -35,6 +35,13 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'thumbnail' => 'required',
+            'content' => 'required'
+        ]);
+
         $article = Article::create([
             'title' => $request->title,
             'author' => $request->author,
@@ -42,7 +49,7 @@ class ArticlesController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Successful article create!');
     }
 
     /**
