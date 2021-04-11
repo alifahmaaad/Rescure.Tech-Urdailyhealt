@@ -17,11 +17,12 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($articles as $article)
                 <tr>
-                    <th scope="col">1</th>
-                    <td>Makanan Sehat</td>
-                    <td>04/04/2021 23:59:59</td>
-                    <td>Ada gambarnya / nama gambarnya aja</td>
+                    <th scope="col">{{ $loop->iteration }}</th>
+                    <td>{{ $article->title }}</td>
+                    <td>{{ $article->updated_at }}</td>
+                    <td><img src="{{ asset($article->thumbnail) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -29,30 +30,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Makanan Diet</td>
-                    <td>05/04/2021 23:59:59</td>
-                    <td>Ada gambarnya / nama gambarnya aja</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Hidup Sehat</td>
-                    <td>06/04/2021 23:59:59</td>
-                    <td>Ada gambarnya / nama gambarnya aja</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
-                        </div>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
