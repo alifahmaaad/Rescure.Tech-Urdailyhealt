@@ -147,7 +147,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Tertimonials
+                                    Testimonials
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
