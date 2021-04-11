@@ -75,7 +75,7 @@
                                 <a class="nav-link " href="pricelist">Pricelist</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="#">Article</a>
+                                <a class="nav-link " href="article">Article</a>
                             </li>
                             <li class="nav-item px-3">
                                 <a class="nav-link " href="about_us">About Us!</a>

@@ -34,6 +34,9 @@ Route::get('/about_us', function () {
 Route::get('/faq', function () {
     return view('customers/faq/index');
 });
+Route::get('/article', function () {
+    return view('customers/article/index');
+});
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardsController::class, 'index']);
