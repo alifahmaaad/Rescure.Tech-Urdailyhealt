@@ -25,7 +25,7 @@
                     <td><img src="{{ asset($article->thumbnail) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <a type="button" class="btn btn-primary" href="{{ url('articles/' . $article->id . '/edit') }}">Edit</a>
                             <button type="button" class="btn btn-warning">Archieve</button>
                         </div>
                     </td>
