@@ -74,7 +74,8 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::findorfail($id);
+        return view('administrators.articles.edit', compact('article'));
     }
 
     /**
