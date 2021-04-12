@@ -39,13 +39,13 @@ Route::get('/article', function () {
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-    Route::get('/dashboard', [DashboardsController::class, 'index']);
+    Route::resource('/dashboard', DashboardsController::class);
     // Articles Controller
 
     Route::resource('/articles', ArticlesController::class);
 
     // Menus Controller
-    Route::get('/menu', [MenusController::class, 'index']);
-    Route::get('/testi', [TestimonialsController::class, 'index']);
-    Route::get('/user', [UsersController::class, 'index']);
+    Route::resource('/menus', MenusController::class);
+    Route::resource('/testi', TestimonialsController::class);
+    Route::resource('/user', UsersController::class);
 });
