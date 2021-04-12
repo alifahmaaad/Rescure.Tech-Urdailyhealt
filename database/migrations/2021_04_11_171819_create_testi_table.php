@@ -17,6 +17,8 @@ class CreateTestiTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('picture');
+            $table->string('isi');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }

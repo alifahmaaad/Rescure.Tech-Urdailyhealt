@@ -11,8 +11,8 @@
                 <tr>
                     <th scope="col">Numb</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Last Update</th>
                     <th scope="col">Picture</th>
+                    <th scope="col">Isi</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -20,8 +20,8 @@
                 <tr>
                     <th scope="col">1</th>
                     <td>Awkarin</td>
-                    <td>04/04/2021 23:59:59</td>
                     <td>Ada fotonya / nama fotonya aja</td>
+                    <td>Makanannya enak</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -32,8 +32,8 @@
                 <tr>
                     <th scope="col">2</th>
                     <td>Sargib</td>
-                    <td>05/04/2021 23:59:59</td>
                     <td>Ada fotonya / nama fotonya aja</td>
+                    <td>Murah dan enak</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -44,8 +44,8 @@
                 <tr>
                     <th scope="col">3</th>
                     <td>Ericarl</td>
-                    <td>06/04/2021 23:59:59</td>
                     <td>Ada fotonya / nama fotonya aja</td>
+                    <td>Sehat banget</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
