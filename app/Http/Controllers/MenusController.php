@@ -25,7 +25,7 @@ class MenusController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.menus.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class MenusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'menu' => 'required',
+            'day' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        Menu::create([
+            'menu' => $request->menu,
+            'day' => $request->day,
+            'type' => $request->type,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+
+        return redirect()->back()->with('success', 'Successful article create!');
     }
 
     /**

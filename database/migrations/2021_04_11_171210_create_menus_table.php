@@ -18,7 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('menu');
             $table->string('day');
             $table->string('type');
-            $table->text('description');
+            $table->string('description');
             $table->integer('price');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();

@@ -3,7 +3,7 @@
 @section('main')
 <div class="container">
     <div class="row">
-        <button type="button" class="btn btn-success">Create</button>
+        <a href="{{ url('menus/create') }}" type="button" class="btn btn-success">Create</a>
     </div>
     <div class="row">
         <table class="table table-light table-striped table-hover table-bordered">
