@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Testi;
 
 class TestimonialsController extends Controller
 {
@@ -13,7 +14,8 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        return view('administrators.testimonials.index');
+        $testimonials = Testi::All();
+        return view('administrators.testimonials.index', compact('testimonials'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.testimonials.create');
     }
 
     /**
@@ -34,7 +36,19 @@ class TestimonialsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'picture' => 'required',
+            'isi' => 'required',
+        ]);
+
+        Testi::create([
+            'nama' => $request->nama,
+            'picture' => $request->file('picture')->move('uploads/testimonials', $request->nama . '_' . $request->file('picture')->getClientOriginalName()),
+            'isi' => $request->isi
+        ]);
+
+        return redirect()->back()->with('success', 'Successful article create!');
     }
 
     /**

@@ -12,7 +12,6 @@
                     <th scope="col">Numb</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Type</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -21,7 +20,6 @@
                     <th scope="col">1</th>
                     <td>Hifdzi</td>
                     <td>Hifdzi@admin.com</td>
-                    <td>Administrators</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -33,7 +31,6 @@
                     <th scope="col">2</th>
                     <td>Uus</td>
                     <td>Uus@admin.com</td>
-                    <td>Administrators</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -45,7 +42,6 @@
                     <th scope="col">3</th>
                     <td>Remin</td>
                     <td>Remin@admin.com</td>
-                    <td>Administrators</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <button type="button" class="btn btn-primary">Edit</button>
