@@ -16,39 +16,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Hifdzi</td>
-                    <td>Hifdzi@admin.com</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Uus</td>
-                    <td>Uus@admin.com</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Remin</td>
-                    <td>Remin@admin.com</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
-                        </div>
-                    </td>
-                </tr>
+                @foreach ($users as $user)
+                    <tr>
+                        <th scope="col">{{$loop->iteration}}</th>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic outlined button group">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="button" class="btn btn-warning">Archieve</button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
