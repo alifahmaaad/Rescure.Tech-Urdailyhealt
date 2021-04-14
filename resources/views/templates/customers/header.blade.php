@@ -32,7 +32,7 @@
             height: auto;
         }
     </style>
-    <link rel="icon" href="{{ asset('assets/images/logo.jpg') }}" />
+    <link rel="icon" href="{{ asset('assets/images/urdailyhealth.png') }}" />
     <style>
         .navbar-nav>li>.dropdown-menu a:active,
         .navbar-nav>li>.dropdown-menu a:hover {
@@ -60,7 +60,7 @@
             <nav class="navbar navbar-expand-md fixed ">
                 <div class="container ">
                     <div class="col">
-                        <a href="/"><img class="bd-placeholder-img rounded-circle" style="height: 75px; width: 75px" src="{{ asset('assets/images/logo.jpg') }}" class=" img-fluid "></a>
+                        <a href="/"><img class="bd-placeholder-img rounded-circle" style="height: 75px; width: 75px" src="{{ asset('assets/images/urdailyhealth.png') }}" class=" img-fluid "></a>
                     </div>
                     <button class="navbar-toggler navbar-dark  " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -90,7 +90,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item px-3 pt-1">
-                                <a class="btn btn-success rounded-pill" href="#">Order Now &raquo;</a>
+                                <a class="btn btn-success rounded-pill" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a>
                             </li>
                         </ul>
                         <!-- <form class="d-flex">
