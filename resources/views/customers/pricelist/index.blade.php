@@ -3,10 +3,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 
-<div class="container-fluid text-center" id="pricelist">
-  <div class="row" style="padding-top: 120px;padding-bottom: 40px;">
+<div class="container-fluid text-center" id="pricelist" style="padding-top: 100px;padding-bottom: 40px;">
+  <h1 style="padding-bottom:10px ;">Our Menu On this Week</h1>
+  <div class="row">
     <!-- CAROUSEL IMG PRICELIST -->
-    <div id="pricelistcarousel" class="col-lg-3 carousel slide  pricelistcontent" data-ride="carousel">
+    <div id="pricelistcarousel" class="col-lg-3 carousel slide  pricelistcontent pb-3" data-ride="carousel">
       <div class="carousel-indicators ">
         <li type="button" data-target="#pricelistcarousel" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
         <li type="button" data-target="#pricelistcarousel" data-slide-to="1" aria-label="Slide 2"></li>
@@ -31,11 +32,10 @@
     <!-- END CAROUSEL IMG PRICELIST -->
 
     <div class="col-lg-6 container pricelist mb-2 ">
-      <h1>Our Menu On this Week</h1>
       <!-- LUNCH -->
-      <div class="row">
+      <div class="row pt-0">
         <div class="container judul">
-          <h2 class=" my-2">Lunch</h2>
+          <h2 class=" mb-2">Lunch</h2>
         </div>
         <div class="container">
           <div class="owl-carousel">
@@ -106,7 +106,7 @@
       <!-- DINNER -->
       <div class="row">
         <div class="container judul">
-          <h2 class=" my-2">Dinner</h2>
+          <h2 class=" mb-2">Dinner</h2>
         </div>
         <div class="container">
           <div class="owl-carousel">

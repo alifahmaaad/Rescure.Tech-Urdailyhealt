@@ -4,7 +4,7 @@
     <div style="padding-top: 100px;">
 
         <div class="container faq  mb-2 ">
-            <h1>Frequently Asked Questions (FAQ)</h1>
+            <h1 class="jdl">Frequently Asked Questions (FAQ)</h1>
             <section class="faq-sec">
                 <div class="container border-left question">
                     <div class="row h-100">

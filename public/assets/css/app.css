@@ -6,6 +6,7 @@
   margin-top: 0; 
 } */
 @import url("https://fonts.googleapis.com/css2?family=Revalia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -59,7 +60,7 @@ footer {
 }
 .nav-link {
     text-decoration: none;
-    color: #335343;
+    color: #115b44;
     font-size: 18px;
 }
 .nav-link:hover {
@@ -103,7 +104,7 @@ footer {
 }
 .hiddentext {
     display: inline-block;
-    max-height: 150px;
+    max-height: 140px;
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
@@ -156,8 +157,8 @@ h2 {
 }
 .link {
     text-decoration: none;
-    color: #335343;
-    font-size: 18px;
+    color: #115b44;
+    font-size: 15px;
 }
 .readmore a {
     text-align: right;
@@ -169,7 +170,7 @@ h2 {
 
 /* ABOUT US PAGE  */
 .aboutustittle {
-    color: #335343;
+    color: #115b44;
 }
 .aboutus {
     padding-left: 200px;
@@ -186,6 +187,8 @@ h2 {
 /* PRICELIST PAGE */
 #pricelist h1 {
     padding-top: 20px;
+    font-family: "Pacifico", cursive;
+    color: #115b44;
 }
 .pricelist .row {
     padding-bottom: 25px;
@@ -193,14 +196,15 @@ h2 {
 }
 .pricelist .row .judul {
     padding: 0;
-    padding-bottom: 18px;
-    padding-top: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     background-color: #f1bbbc;
     text-align: left;
 }
 .pricelist .row .container h2 {
     font-family: "Revalia", cursive;
     color: white;
+    font-size: 25px;
     margin-left: 6%;
 }
 /* .pricelistcontent {
@@ -220,9 +224,12 @@ h2 {
 /* END PRICELIST PAGE */
 
 /* FAQ PAGE */
-.faq h1 {
+.faq .jdl,
+.article h1 {
     padding-bottom: 20px;
     padding-top: 20px;
+    font-family: "Pacifico", cursive;
+    color: #115b44;
 }
 .faq .faq-sec .question {
     border-width: 8px !important;
