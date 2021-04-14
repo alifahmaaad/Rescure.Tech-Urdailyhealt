@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\MenusController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CustomerHomesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,10 @@ use App\Http\Controllers\UsersController;
 //     return view('administrators.index');
 // })->name('dashboard');
 
-Route::get('/', function () {
-    return view('customers/home/index');
-});
+// Route::get('/', function () {
+//     return view('customers/home/index');
+// });
+Route::get('/', [CustomerHomesController::class, 'index']);
 Route::get('/pricelist', function () {
     return view('customers/pricelist/index');
 });
