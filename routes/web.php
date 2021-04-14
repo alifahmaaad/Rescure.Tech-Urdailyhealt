@@ -49,8 +49,12 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/menus/kill/{id}', [MenusController::class, 'kill']);
     Route::get('/menus/restore/{id}', [MenusController::class, 'restore']);
     Route::resource('/menus', MenusController::class);
+
     Route::get('/testi/archive', [TestimonialsController::class, 'archive']);
+    Route::get('/testi/kill/{id}', [TestimonialsController::class, 'kill']);
+    Route::get('/testi/restore/{id}', [TestimonialsController::class, 'restore']);
     Route::resource('/testi', TestimonialsController::class);
+
     Route::get('/user/archive', [UsersController::class, 'archive']);
     Route::resource('/user', UsersController::class);
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Testi;
+use File;
 
 class TestimonialsController extends Controller
 {
@@ -53,7 +54,7 @@ class TestimonialsController extends Controller
             'isi' => $request->isi
         ]);
 
-        return redirect()->back()->with('success', 'Successful article create!');
+        return redirect()->back()->with('success', 'Testi created!');
     }
 
     /**
@@ -99,6 +100,23 @@ class TestimonialsController extends Controller
     public function destroy($id)
     {
         Testi::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Successful menu deleted!');
+        return redirect()->back()->with('success', 'Testi archived!');
+    }
+
+    public function kill($id)
+    {   
+        $picture = Testi::onlyTrashed()->where('id', $id)->get('picture');
+        $file = public_path('/').$picture[0]->picture;
+        if(file_exists($file)){
+            @unlink($file);
+        }
+        Testi::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'testi deleted!');
+    }
+
+    public function restore($id)
+    {   
+        Testi::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'Testi restored!');
     }
 }
