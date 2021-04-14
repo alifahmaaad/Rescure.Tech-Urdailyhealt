@@ -14,10 +14,16 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        $testimonials = Testi::All();
+        $testimonials = Testi::all();
         return view('administrators.testimonials.index', compact('testimonials'));
     }
 
+    public function archive()
+    {
+        // $testimonials = Testi::onlyTrashed()->get();
+        $testimonials = Testi::all();
+        return view('administrators.testimonials.trash', compact('testimonials'));
+    }
     /**
      * Show the form for creating a new resource.
      *

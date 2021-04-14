@@ -113,9 +113,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('menus/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
@@ -138,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
@@ -159,9 +159,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('testi/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
@@ -182,9 +182,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('user/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>

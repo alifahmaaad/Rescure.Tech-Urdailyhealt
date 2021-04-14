@@ -18,6 +18,12 @@ class UsersController extends Controller
         return view('administrators.users.index', compact('users'));
     }
 
+    public function archive()
+    {
+        // $users = User::onlyTrashed()->get();
+        $users = User::all();
+        return view('administrators.users.trash', compact('users'));
+    }
     /**
      * Show the form for creating a new resource.
      *

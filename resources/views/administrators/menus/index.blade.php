@@ -29,7 +29,7 @@
                         <td>Rp {{$menu->price}}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                <a type="button" class="btn btn-primary" href="{{ url('menus/' . $menu->id . '/edit') }}">Edit</a>
                                 <button type="button" class="btn btn-warning">Archieve</button>
                             </div>
                         </td>

@@ -18,6 +18,13 @@ class MenusController extends Controller
         return view('administrators.menus.index', compact('menus'));
     }
 
+    public function archive()
+    {
+        // $menus = Menu::onlyTrashed()->get();
+        $menus = Menu::all();
+        return view('administrators.menus.trash', compact('menus'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -74,7 +81,8 @@ class MenusController extends Controller
      */
     public function edit($id)
     {
-        //
+        $menu = Menu::findorfail($id);
+        return view('administrators.menus.edit', compact('menu'));
     }
 
     /**
@@ -86,7 +94,24 @@ class MenusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'menu' => 'required',
+            'day' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        Menu::where('id', $id)
+        ->update([
+            'menu' => $request->menu,
+            'day' => $request->day,
+            'type' => $request->type,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+
+        return redirect()->back()->with('success', 'Successful article create!');
     }
 
     /**
@@ -99,4 +124,5 @@ class MenusController extends Controller
     {
         //
     }
+
 }
