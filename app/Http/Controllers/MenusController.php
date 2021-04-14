@@ -58,7 +58,7 @@ class MenusController extends Controller
             'price' => $request->price
         ]);
 
-        return redirect()->back()->with('success', 'Successful menu create!');
+        return redirect()->back()->with('success', 'Menu created!');
     }
 
     /**
@@ -110,7 +110,7 @@ class MenusController extends Controller
             'price' => $request->price
         ]);
 
-        return redirect()->back()->with('success', 'Successful menu updated!');
+        return redirect()->back()->with('success', 'Menu updated!');
     }
 
     /**
@@ -122,6 +122,18 @@ class MenusController extends Controller
     public function destroy($id)
     {
         Menu::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Successful menu deleted!');
+        return redirect()->back()->with('success', 'Menu archived!');
+    }
+
+    public function kill($id)
+    {
+        Menu::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'Menu deleted!');
+    }
+
+    public function restore($id)
+    {
+        Menu::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'Menu restored!');
     }
 }
