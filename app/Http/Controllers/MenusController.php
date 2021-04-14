@@ -20,8 +20,7 @@ class MenusController extends Controller
 
     public function archive()
     {
-        // $menus = Menu::onlyTrashed()->get();
-        $menus = Menu::all();
+        $menus = Menu::onlyTrashed()->get();
         return view('administrators.menus.trash', compact('menus'));
     }
 
@@ -59,7 +58,7 @@ class MenusController extends Controller
             'price' => $request->price
         ]);
 
-        return redirect()->back()->with('success', 'Successful article create!');
+        return redirect()->back()->with('success', 'Successful menu create!');
     }
 
     /**
@@ -111,7 +110,7 @@ class MenusController extends Controller
             'price' => $request->price
         ]);
 
-        return redirect()->back()->with('success', 'Successful article create!');
+        return redirect()->back()->with('success', 'Successful menu updated!');
     }
 
     /**
@@ -122,7 +121,7 @@ class MenusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Menu::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Successful menu deleted!');
     }
-
 }

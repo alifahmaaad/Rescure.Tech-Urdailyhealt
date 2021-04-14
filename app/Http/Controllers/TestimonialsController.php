@@ -20,8 +20,7 @@ class TestimonialsController extends Controller
 
     public function archive()
     {
-        // $testimonials = Testi::onlyTrashed()->get();
-        $testimonials = Testi::all();
+        $testimonials = Testi::onlyTrashed()->get();
         return view('administrators.testimonials.trash', compact('testimonials'));
     }
     /**
@@ -99,6 +98,7 @@ class TestimonialsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Testi::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Successful menu deleted!');
     }
 }

@@ -26,7 +26,11 @@
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined button group">
                                 <button type="button" class="btn btn-primary">Edit</button>
-                                <button type="button" class="btn btn-warning">Archieve</button>
+                                <form action="{{url('testi/'.$testi->id)}}" method='post' class="d-inline" onsubmit="return confirm('Yakin arsip data?')">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn btn-warning">Archive</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
