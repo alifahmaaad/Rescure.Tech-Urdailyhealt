@@ -1,5 +1,5 @@
 @include('templates.customers.header')
-<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 80%, white);background-size: 100% 100%;background-repeat: no-repeat;">
+<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 50%, white);background-size: 100% 100%;background-repeat: no-repeat;">
     <main class="container pt-5">
         <div id="myCarousel" class="carousel slide py-5" data-ride="carousel">
             </br>

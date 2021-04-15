@@ -65,38 +65,40 @@
                     <button class="navbar-toggler navbar-dark  " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse " id="navbarsExampleDefault">
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 
-                        <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
+                        <ul class="navbar-nav me-auto  mb-2 mb-md-0 ">
                             <li class="nav-item px-3">
-                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="pricelist">Pricelist</a>
+                                <a class="nav-link " href="{{ url('pricelist') }}">Pricelist</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="article">Article</a>
+                                <a class="nav-link " href="{{ url('article') }}">Article</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="about_us">About Us!</a>
+                                <a class="nav-link " href="{{ url('about_us') }}">About Us!</a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link " href="faq">FAQ</a>
+                                <a class="nav-link " href="{{ url('faq') }}">FAQ</a>
                             </li>
-                            <li class="nav-item  px-3 dropdown">
+                            <!-- <li class="nav-item  px-3 dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Admin</a>
                                 <ul style="background-color: white;" class="dropdown-menu" aria-labelledby="dropdown01">
                                     <li><a class="dropdown-item" href="{{ url('login') }}">Login</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item px-3 pt-1">
-                                <a class="btn btn-success rounded-pill" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a>
-                            </li>
+                            </li> -->
+
                         </ul>
+
                         <!-- <form class="d-flex">
                     <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form> -->
+                        <div class="col text-center">
+                            <a class="btn btn-success rounded-pill" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a>
+                        </div>
                     </div>
                 </div>
 
