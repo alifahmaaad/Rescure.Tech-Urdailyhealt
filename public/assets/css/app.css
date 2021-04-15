@@ -33,6 +33,10 @@ html {
     background-color: #f1bbbc;
     border-color: #f1bbbc;
 }
+.text {
+    font-family: "Pacifico", cursive;
+    color: #115b44;
+}
 .btn-secondary {
     background-color: #f1bbbc;
     border-color: #f1bbbc;
@@ -103,17 +107,16 @@ footer {
     margin: 2rem 0;
 }
 .hiddentext {
+    text-align: justify;
     display: inline-block;
     max-height: 140px;
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
-
-.featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.05rem;
+.homearticle .hiddentext {
+    max-height: 150px;
 }
+
 .carousel-caption p,
 h2 {
     color: black;
@@ -128,8 +131,8 @@ h2 {
 
 .testicontent {
     top: 50%;
-    transform: translateY(-50%);
     text-align: center;
+    padding-bottom: 7%;
 }
 .captiontesti {
     margin: auto;
@@ -145,7 +148,7 @@ h2 {
 }
 #Testimoni {
     width: 100%;
-    height: 300px;
+    height: auto;
 }
 #Menu {
     width: 100%;
@@ -153,7 +156,10 @@ h2 {
     padding-top: 30px;
 }
 .headertesti {
+    padding-bottom: 50px;
+    font-family: "Pacifico", cursive;
     font-weight: 400;
+    color: #115b44;
 }
 .link {
     text-decoration: none;
@@ -323,6 +329,12 @@ h2 {
     }
 }
 @media (max-width: 40em) {
+    .carousel-control-next {
+        padding-left: 30px;
+    }
+    .carousel-control-prev {
+        padding-right: 30px;
+    }
     .imgswarticle {
         width: 350px;
     }
@@ -344,6 +356,9 @@ h2 {
         min-width: 100%;
         height: 15rem;
     }
+    .testicontent {
+        padding-bottom: 50px;
+    }
     .captiontesti {
         margin: auto;
         padding-right: 30px;
@@ -354,6 +369,7 @@ h2 {
         padding-left: 20px;
     }
     .headertesti {
+        font-family: "Pacifico", cursive;
         font-weight: 400;
         font-size: 40px;
     }

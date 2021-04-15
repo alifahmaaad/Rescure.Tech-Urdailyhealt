@@ -52,16 +52,18 @@
 <!-- Marketing messaging and featurettes
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container-fluid" style="background-image: url();background-size: 100% 100%;background-repeat: no-repeat;">
+<div class="container-fluid">
     <div class="container marketing pt-5">
 
         <div class="row ">
             <div class="col-lg-6 text-center">
                 <img class="bd-placeholder-img border rounded" width="200" height="200" src="{{ asset('assets/images/urdailyhealth.png') }}" alt="">
-                <h2 class="mt-4">Tomorrow Lunch</h2>
+                <h2 class="mt-4 text ">Lunch Tomorrow</h2>
                 @foreach($lunchs as $lunch)
-                <p>{{ $lunch->description }}</p>
-                <p>@currency($lunch->price )</p>
+                <h4>{{ $lunch->menu }}</h4>
+                <p> {{ $lunch->description }}<br />
+                    @currency($lunch->price )
+                </p>
                 @endforeach
                 <p><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
@@ -69,10 +71,12 @@
             <div class="col-lg-6 text-center ">
 
                 <img class="bd-placeholder-img border rounded" width="200" height="200" src="{{ asset('assets/images/urdailyhealth.png') }}" alt="">
-                <h2 class="mt-4">Tomorrow Dinner</h2>
+                <h2 class="mt-4 text">Dinner Tomorrow</h2>
                 @foreach($dinners as $dinner)
-                <p>{{ $dinner->description }}</p>
-                <p>@currency($dinner->price)</p>
+                <h4>{{ $dinner->menu }}</h4>
+                <p> {{ $dinner->description }}<br />
+                    @currency($dinner->price )
+                </p>
                 @endforeach
                 <p><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
@@ -85,9 +89,10 @@
         @foreach($articles as $article)
         @if($loop->odd )
         <div class="row featurette">
-            <div class="col-md-8 order-md-1">
-                <h2 class="featurette-heading">{{ $article->title }}</h2>
-                <p class="lead">{{ $article->content }}</p>
+            <div class="col-md-8 order-md-1 homearticle">
+                <h2 class="py-3">{{ $article->title }}</h2>
+                <p class="lead hiddentext">{{ $article->content }}</p>
+                <p class="link readmore"><a href="" class="link">Read More...</a></p>
             </div>
             <div class="col-md-4 order-md-2">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
@@ -97,9 +102,10 @@
         <hr class="featurette-divider">
         @else
         <div class="row featurette">
-            <div class="col-md-8 order-md-2">
-                <h2 class="featurette-heading">{{ $article->title }}</h2>
-                <p class="lead">{{ $article->content }}</p>
+            <div class="col-md-8 order-md-2 homearticle">
+                <h2 class="py-3">{{ $article->title }}</h2>
+                <p class="lead hiddentext">{{ $article->content }}</p>
+                <p class="link readmore"><a href="" class="link">Read More...</a></p>
             </div>
             <div class="col-md-4 order-md-1">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
@@ -109,16 +115,25 @@
         @endif
         @endforeach
 
-        <p class="text-center featurette-heading my-0 headertesti">Testimoni</p>
+        <h2 class="text-center my-0 headertesti">Testimoni</h2>
         <div id="Testimoni" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner testicontent">
-                @foreach($testi as $testimoni)
-                <div class="carousel-item ">
-                    <h2 class="testitittle">{{$testimoni->nama}}</h2>
-                    <p class="captiontesti">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
 
+                @foreach($testi as $testimoni)
+
+                @if($loop->iteration == 1)
+                <div class="carousel-item active">
+                    <h2 class="testitittle">{{$testimoni->nama}}</h2>
+                    <p class="captiontesti">{{$testimoni->isi}}</p>
                 </div>
+                @else
+                <div class="carousel-item">
+                    <h2 class="testitittle">{{$testimoni->nama}}</h2>
+                    <p class="captiontesti">{{$testimoni->isi}}</p>
+                </div>
+                @endif
                 @endforeach
+
             </div>
             <a class="carousel-control-prev " href="#Testimoni" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -129,7 +144,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
 
