@@ -33,6 +33,9 @@ html {
     background-color: #f1bbbc;
     border-color: #f1bbbc;
 }
+p {
+    margin-bottom: 0;
+}
 .text {
     font-family: "Pacifico", cursive;
     color: #115b44;
@@ -114,7 +117,7 @@ footer {
     text-overflow: ellipsis;
 }
 .homearticle .hiddentext {
-    max-height: 150px;
+    max-height: 240px;
 }
 
 .carousel-caption p,
@@ -182,9 +185,7 @@ h2 {
     padding-left: 200px;
     padding-right: 200px;
 }
-.aboutus h3 {
-    margin-bottom: 15px;
-}
+
 .aboutus .contact {
     padding-bottom: 50px;
 }
