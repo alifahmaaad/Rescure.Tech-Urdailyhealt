@@ -44,13 +44,11 @@ class TestimonialsController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'picture' => 'required',
             'isi' => 'required',
         ]);
 
         Testi::create([
             'nama' => $request->nama,
-            'picture' => $request->file('picture')->move('uploads/testimonials', $request->nama . '_' . $request->file('picture')->getClientOriginalName()),
             'isi' => $request->isi
         ]);
 
@@ -76,7 +74,9 @@ class TestimonialsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // return 'ini fungsi edit di testi';  
+        $testi = Testi::findorfail($id);
+        return view('administrators.testimonials.edit', compact('testi'));
     }
 
     /**
@@ -88,7 +88,18 @@ class TestimonialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'isi' => 'required',
+        ]);
+
+        Testi::where('id', $id)
+        ->update([
+            'nama' => $request->nama,
+            'isi' => $request->isi,
+        ]);
+
+        return redirect()->back()->with('success', 'Testi updated!');
     }
 
     /**
@@ -104,12 +115,7 @@ class TestimonialsController extends Controller
     }
 
     public function kill($id)
-    {   
-        $picture = Testi::onlyTrashed()->where('id', $id)->get('picture');
-        $file = public_path('/').$picture[0]->picture;
-        if(file_exists($file)){
-            @unlink($file);
-        }
+    {
         Testi::onlyTrashed()->where('id', $id)->forceDelete();
         return redirect()->back()->with('success', 'testi deleted!');
     }
