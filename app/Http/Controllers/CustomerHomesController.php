@@ -15,6 +15,6 @@ class CustomerHomesController extends Controller
         $dinners = DB::table('menus')->where('type', '=', 'Dinner')->take(1)->get();
         $testi = DB::table('testi')->get();
 
-        return view('customers/home/index', compact(['articles', 'lunchs', 'dinners', 'testi']));
+        return view('customers.home.index', compact(['articles', 'lunchs', 'dinners', 'testi']));
     }
 }

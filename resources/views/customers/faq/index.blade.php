@@ -1,7 +1,7 @@
 @include('templates.customers.header')
 
 <div class="container text-center" id="faq">
-    <div style="padding-top: 100px;">
+    <div style="padding-top: 90px;">
 
         <div class="container faq  mb-2 ">
             <h1 class="jdl">Frequently Asked Questions (FAQ)</h1>

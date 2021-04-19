@@ -68,9 +68,10 @@ footer {
 .nav-link {
     text-decoration: none;
     color: #115b44;
-    font-size: 18px;
+    font-size: 16px;
 }
 .nav-link:hover {
+    font-weight: bold;
     color: #74a49c;
 }
 
@@ -109,17 +110,29 @@ footer {
 .featurette-divider {
     margin: 2rem 0;
 }
-.hiddentext {
+.hiddentext,
+.article p {
     text-align: justify;
     display: inline-block;
     max-height: 140px;
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
+
+.homearticle p {
+    font-size: 18px;
+    text-align: justify;
+    display: inline-block;
+    max-height: 240px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
 .homearticle .hiddentext {
     max-height: 240px;
 }
-
+.row p {
+    text-align: justify;
+}
 .carousel-caption p,
 h2 {
     color: black;
@@ -135,7 +148,6 @@ h2 {
 .testicontent {
     top: 50%;
     text-align: center;
-    padding-bottom: 7%;
 }
 .captiontesti {
     margin: auto;
@@ -152,6 +164,9 @@ h2 {
 #Testimoni {
     width: 100%;
     height: auto;
+}
+#testi {
+    padding-bottom: 10%;
 }
 #Menu {
     width: 100%;
@@ -195,6 +210,7 @@ h2 {
 #pricelist h1 {
     padding-top: 20px;
     font-family: "Pacifico", cursive;
+    font-weight: bold;
     color: #115b44;
 }
 .pricelist .row {
@@ -220,7 +236,19 @@ h2 {
 } */
 
 .pricelistcontent .carousel-inner .carousel-item img {
-    height: 800px;
+    width: 90%;
+    height: auto;
+}
+.owl-carousel .card-title {
+    font-weight: bold;
+}
+.owl-nav {
+    margin-top: -12%;
+    padding-bottom: 12%;
+}
+.owl-stage-outer {
+    width: 90%;
+    margin-left: 5%;
 }
 .owl-carousel {
     padding-top: 30px;
@@ -228,14 +256,24 @@ h2 {
 .owl-nav button {
     width: 20px;
 }
+.owl-prev {
+    float: left;
+}
+.owl-next {
+    float: right;
+}
+.owl-item .card {
+    width: 90%;
+}
 /* END PRICELIST PAGE */
 
 /* FAQ PAGE */
 .faq .jdl,
 .article h1 {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     padding-top: 20px;
     font-family: "Pacifico", cursive;
+    font-weight: bold;
     color: #115b44;
 }
 .faq .faq-sec .question {
@@ -316,6 +354,10 @@ h2 {
     .pricelistcontent .carousel-inner .carousel-item img {
         height: auto;
     }
+    .owl-nav {
+        margin-top: -25%;
+        padding-bottom: 25%;
+    }
 }
 @media (max-width: 90em) {
     .pricelistcontent .carousel-control-next-icon,
@@ -332,6 +374,10 @@ h2 {
 @media (max-width: 40em) {
     .carousel-control-next {
         padding-left: 30px;
+    }
+    .owl-nav {
+        margin-top: -35%;
+        padding-bottom: 35%;
     }
     .carousel-control-prev {
         padding-right: 30px;

@@ -60,7 +60,7 @@
             <nav class="navbar navbar-expand-md fixed ">
                 <div class="container ">
                     <div class="col">
-                        <a href="/"><img class="bd-placeholder-img rounded-circle" style="height: 75px; width: 75px" src="{{ asset('assets/images/urdailyhealth.png') }}" class=" img-fluid "></a>
+                        <a href="/"><img class="bd-placeholder-img rounded-circle" style="height: 55px; width: 55px" src="{{ asset('assets/images/urdailyhealth.png') }}" class=" img-fluid "></a>
                     </div>
                     <button class="navbar-toggler navbar-dark  " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

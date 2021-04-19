@@ -19,6 +19,12 @@ class ArticlesController extends Controller
         return view('administrators.articles.index', compact('articles'));
     }
 
+    public function costumerindex()
+    {
+        $articles = Article::all();
+        return view('customers.article.index', compact('articles'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

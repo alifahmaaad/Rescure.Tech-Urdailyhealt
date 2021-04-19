@@ -1,6 +1,6 @@
 @include('templates.customers.header')
-<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 50%, white);background-size: 100% 100%;background-repeat: no-repeat;">
-    <main class="container pt-5">
+<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 30%, white);background-size: 100% 100%;background-repeat: no-repeat;">
+    <main class="container pt-4">
         <div id="myCarousel" class="carousel slide py-5" data-ride="carousel">
             </br>
             <div class="carousel-indicators">
@@ -61,11 +61,11 @@
                 <h2 class="mt-4 text ">Lunch Tomorrow</h2>
                 @foreach($lunchs as $lunch)
                 <h4>{{ $lunch->menu }}</h4>
-                <p> {{ $lunch->description }}<br />
+                <p class="pb-4 text-center"> {{ $lunch->description }}<br />
                     @currency($lunch->price )
                 </p>
                 @endforeach
-                <p><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-4"><a class="btn btn-secondary " href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
 
             <div class="col-lg-6 text-center ">
@@ -74,78 +74,75 @@
                 <h2 class="mt-4 text">Dinner Tomorrow</h2>
                 @foreach($dinners as $dinner)
                 <h4>{{ $dinner->menu }}</h4>
-                <p> {{ $dinner->description }}<br />
+                <p class="pb-4 text-center"> {{ $dinner->description }}<br />
                     @currency($dinner->price )
                 </p>
                 @endforeach
-                <p><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-1"><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
         </div>
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-        @foreach($articles as $article)
-        @if($loop->odd )
-        <div class="row featurette">
-            <div class="col-md-8 order-md-1 homearticle">
-                <h2 class="py-3">{{ $article->title }}</h2>
-                <p class="lead hiddentext">{{ $article->content }}</p>
-                <p class="link readmore"><a href="" class="link">Read More...</a></p>
-            </div>
-            <div class="col-md-4 order-md-2">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-        @else
-        <div class="row featurette">
-            <div class="col-md-8 order-md-2 homearticle">
-                <h2 class="py-3">{{ $article->title }}</h2>
-                <p class="lead hiddentext">{{ $article->content }}</p>
-                <p class="link readmore"><a href="" class="link">Read More...</a></p>
-            </div>
-            <div class="col-md-4 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        @endif
-        @endforeach
-
-        <h2 class="text-center my-0 headertesti">Testimoni</h2>
-        <div id="Testimoni" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner testicontent">
-
-                @foreach($testi as $testimoni)
-
-                @if($loop->iteration == 1)
-                <div class="carousel-item active">
-                    <h2 class="testitittle">{{$testimoni->nama}}</h2>
-                    <p class="captiontesti">{{$testimoni->isi}}</p>
+        <div class="py-5">
+            <hr class="featurette-divider">
+            @foreach($articles as $article)
+            @if($loop->odd )
+            <div class="row featurette">
+                <div class="col-md-8 order-md-1 homearticle">
+                    <h2 class="py-3 text">{{ $article->title }}</h2>
+                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}</p>
+                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
                 </div>
-                @else
-                <div class="carousel-item">
-                    <h2 class="testitittle">{{$testimoni->nama}}</h2>
-                    <p class="captiontesti">{{$testimoni->isi}}</p>
+                <div class="col-md-4 order-md-2">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
                 </div>
-                @endif
-                @endforeach
-
             </div>
-            <a class="carousel-control-prev " href="#Testimoni" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#Testimoni" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
 
-        <!-- /END THE FEATURETTES -->
+            <hr class="featurette-divider">
+            @else
+            <div class="row featurette">
+                <div class="col-md-8 order-md-2 homearticle">
+                    <h2 class="py-3 text">{{ $article->title }}</h2>
+                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}</p>
+                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
+                </div>
+                <div class="col-md-4 order-md-1">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            @endif
+            @endforeach
+        </div>
+        <div id="testi">
+            <h2 class="text-center my-0 headertesti">Testimoni</h2>
+            <div id="Testimoni" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner testicontent">
+
+                    @foreach($testi as $testimoni)
+
+                    @if($loop->iteration == 1)
+                    <div class="carousel-item active">
+                        <h4 class="testitittle">{{$testimoni->nama}}</h4>
+                        <p class="captiontesti">{{$testimoni->isi}}</p>
+                    </div>
+                    @else
+                    <div class="carousel-item">
+                        <h4 class="testitittle">{{$testimoni->nama}}</h4>
+                        <p class="captiontesti">{{$testimoni->isi}}</p>
+                    </div>
+                    @endif
+                    @endforeach
+
+                </div>
+                <a class="carousel-control-prev " href="#Testimoni" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#Testimoni" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
 
     </div><!-- /.container -->
 

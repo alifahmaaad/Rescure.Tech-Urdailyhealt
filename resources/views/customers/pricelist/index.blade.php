@@ -3,8 +3,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 
-<div class="container-fluid text-center" id="pricelist" style="padding-top: 100px;padding-bottom: 40px;">
-  <h1 style="padding-bottom:10px ;">Our Menu On this Week</h1>
+<div class="container-fluid text-center" id="pricelist" style="padding-top: 90px;padding-bottom: 40px;">
+  <h1 style="padding-bottom:20px ;">Our Menu On this Week</h1>
   <div class="row">
     <!-- CAROUSEL IMG PRICELIST -->
     <div id="pricelistcarousel" class="col-lg-3 carousel slide  pricelistcontent pb-3" data-ride="carousel">
@@ -41,64 +41,49 @@
           <div class="owl-carousel">
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Senin
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Senin</h4>
+                  <p class="card-text text-center">Bubur Ayam <br>
+                    395 kkal | 27.69 Protein
+                    <br>
+                    Rp. 10.000
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Selasa
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title ">Selasa</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Rabu
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Rabu</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  kamis
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Kamis</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Jum'at
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Jum'at</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
+            <div class="col"></div>
           </div>
         </div>
       </div>
@@ -112,64 +97,45 @@
           <div class="owl-carousel">
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Senin
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Senin</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Selasa
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Selasa</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Rabu
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Rabu</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  kamis
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Kamis</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class=" card  mb-2">
-                <div class="card-header">
-                  Jum'at
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                  <h4 class="card-title">Jum'at</h4>
+                  <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </div>
+            <div class="col"></div>
           </div>
         </div>
       </div>
@@ -209,7 +175,6 @@
   owl.owlCarousel({
     loop: false,
     dots: false,
-    margin: 10,
     nav: true,
     responsiveClass: true,
     navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
