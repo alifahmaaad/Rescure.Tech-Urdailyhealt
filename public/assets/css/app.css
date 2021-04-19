@@ -24,6 +24,15 @@ html {
     height: 100%;
     box-sizing: border-box;
 }
+.btn-success {
+    background-color: #0c6146;
+    border-color: #0c6146;
+}
+.btn-success:visited .btn-success:hover,
+.btn-success:active {
+    background-color: #0c6146;
+    border-color: #0c6146;
+}
 *,
 *:before,
 *:after {

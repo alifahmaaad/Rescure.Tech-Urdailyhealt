@@ -13,30 +13,30 @@
     <title>Login Admin</title>
 </head>
 
-<body>
-    
-    <main class="form-signin text-center">
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-    
-                <img class="mb-4" src="{{ asset('assets/images/urdailyhealth.png') }}" alt="" width="75" height="75">
-    
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                    <label for="email">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="password">
-                    <label for="password">Password</label>
-                </div>
-    
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me" id="remember_me" name="remember"> Remember me
-                    </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-            </form>
+<body style="background-color: #f1bbbc;">
+
+    <main class="form-signin text-center" style="background-color: white;width:50%;height:50%;border-radius:10px;">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <img class="my-4 border border-light rounded-circle" src="{{ asset('assets/images/urdailyhealth.png') }}" alt="" width="75" height="75">
+
+            <div class=" mt-4 form-floating">
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <label for="email">Email address</label>
+            </div>
+            <div class="mb-4 form-floating">
+                <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                <label for="password">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me" id="remember_me" name="remember"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-secondary" type="submit">Log in</button>
+        </form>
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->

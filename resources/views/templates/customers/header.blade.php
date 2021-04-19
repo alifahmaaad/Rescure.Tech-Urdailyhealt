@@ -97,7 +97,7 @@
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form> -->
                         <div class="col text-center">
-                            <a class="btn btn-success rounded-pill" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a>
+                            <a class="btn btn-success rounded-pill order-navbar" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a>
                         </div>
                     </div>
                 </div>
