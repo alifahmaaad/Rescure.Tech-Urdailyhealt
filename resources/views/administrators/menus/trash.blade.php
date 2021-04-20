@@ -1,5 +1,6 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'List Archived Menus')
+@section('breadcrumb', 'Menus')
 @section('main')
 <div class="container">
     <div class="row">
@@ -14,25 +15,25 @@
                     <th scope="col">Price</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody>
                 @foreach ($menus as $menu)
-                    <tr>
-                        <th scope="col">{{$loop->iteration}}</th>
-                        <td>{{$menu->menu}}</td>
-                        <td>{{$menu->day}}</td>
-                        <td>{{$menu->type}}</td>
-                        <td>{{$menu->description}}</td>
-                        <td>Rp {{$menu->price}}</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                                <a href="{{url('menus/restore/'.$menu->id)}}" class="btn btn-primary">Restore</a>
-                                <a href="{{url('menus/kill/'.$menu->id)}}" class="btn btn-danger" onsubmit="return confirm('Yakin hapus data?')">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="col">{{$loop->iteration}}</th>
+                    <td>{{$menu->menu}}</td>
+                    <td>{{$menu->day}}</td>
+                    <td>{{$menu->type}}</td>
+                    <td>{{$menu->description}}</td>
+                    <td>Rp {{$menu->price}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
+                            <a href="{{url('menus/restore/'.$menu->id)}}" class="btn btn-primary">Restore</a>
+                            <a href="{{url('menus/kill/'.$menu->id)}}" class="btn btn-danger" onsubmit="return confirm('Yakin hapus data?')">Delete</a>
+                        </div>
+                    </td>
+                </tr>
                 @endforeach
-            </tbody>   
+            </tbody>
         </table>
     </div>
 </div>

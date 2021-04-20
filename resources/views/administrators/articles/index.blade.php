@@ -1,5 +1,6 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'List Articles')
+@section('breadcrumb', 'Articles')
 @section('main')
 <div class="container">
     <div class="row">

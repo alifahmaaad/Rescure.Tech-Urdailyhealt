@@ -1,4 +1,5 @@
 @extends('templates.administrators.adminlte')
+@section('breadcrumb', 'Articles')
 @section('main')
 <div class="container">
     <div class="row header">
@@ -14,7 +15,7 @@
                     <th scope="col">Picture</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody>
                 @foreach ($articles as $article)
                 <tr>
@@ -30,8 +31,8 @@
                     </td>
                 </tr>
                 @endforeach
-            </tbody>   
+            </tbody>
         </table>
     </div>
-</div>  
+</div>
 @endsection

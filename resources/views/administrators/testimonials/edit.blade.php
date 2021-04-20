@@ -1,5 +1,6 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'Edit Testi')
+@section('breadcrumb', 'Testimonials')
 @section('main')
 
 
@@ -24,10 +25,10 @@
     </div>
 
     <input class="form-control my-3 @error('isi') is-invalid @enderror" type="text" id="isi" name="isi" placeholder="Isi Testi" aria-label="default input example" value="{{$testi->isi}}"">
-    <div class="invalid-feedback">
-        @error('isi')
-        {{ $message }}
-        @enderror
+    <div class=" invalid-feedback">
+    @error('isi')
+    {{ $message }}
+    @enderror
     </div>
 
     <div class="form-group mt-3">

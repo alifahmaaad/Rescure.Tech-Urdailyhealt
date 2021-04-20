@@ -1,5 +1,6 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'Edit Menu')
+@section('breadcrumb', 'Menus')
 @section('main')
 
 

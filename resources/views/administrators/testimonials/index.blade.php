@@ -1,5 +1,6 @@
 @extends('templates.administrators.adminlte')
 @section('title', 'List Testimonials')
+@section('breadcrumb', 'Testimonials')
 @section('main')
 <div class="container">
     <div class="row">
@@ -17,21 +18,21 @@
             </thead>
             <tbody>
                 @foreach ($testimonials as $testi)
-                    <tr>
-                        <th scope="col">{{$loop->iteration}}</th>
-                        <td>{{$testi->nama}}</td>
-                        <td>{{$testi->isi}}</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                                <a type="button" class="btn btn-primary" href="{{ url('testi/' . $testi->id . '/edit') }}">Edit</a>
-                                <form action="{{url('testi/'.$testi->id)}}" method='post' class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn btn-warning">Archive</button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="col">{{$loop->iteration}}</th>
+                    <td>{{$testi->nama}}</td>
+                    <td>{{$testi->isi}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
+                            <a type="button" class="btn btn-primary" href="{{ url('testi/' . $testi->id . '/edit') }}">Edit</a>
+                            <form action="{{url('testi/'.$testi->id)}}" method='post' class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-warning">Archive</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
