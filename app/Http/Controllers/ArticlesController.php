@@ -54,13 +54,12 @@ class ArticlesController extends Controller
             'thumbnail' => 'required',
             'content' => 'required'
         ]);
-
         $article = Article::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'author' => $request->author,
             'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
-            'content' => $request->content
+            'content' => str_replace('&nbsp;', ' ', $request->content)
         ]);
 
         return redirect()->back()->with('success', 'Article created!');
@@ -117,7 +116,7 @@ class ArticlesController extends Controller
             'slug' => Str::slug($request->title),
             'author' => $request->author,
             'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
-            'content' => $request->content,
+            'content' => str_replace('&nbsp;', ' ', $request->content)
         ]);
 
         return redirect()->back()->with('success', 'Article updated!');
