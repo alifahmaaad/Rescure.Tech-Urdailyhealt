@@ -100,22 +100,24 @@ class ArticlesController extends Controller
         $request->validate([
             'title' => 'required',
             'author' => 'required',
-            'thumbnail' => 'required',
             'content' => 'required'
         ]);
-        
-        $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
-        $file = public_path('/').$thumbnail[0]->thumbnail;
-        if(file_exists($file)){
-            @unlink($file);
+
+        if ($request->thumbnail) {
+            $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
+            $file = public_path('/') . $thumbnail[0]->thumbnail;
+            if (file_exists($file)) {
+                @unlink($file);
+            }
+            Article::where('id', $id)->update([
+                'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName())
+            ]);
         }
 
-        Article::where('id', $id)
-        ->update([
+        Article::where('id', $id)->update([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'author' => $request->author,
-            'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
             'content' => str_replace('&nbsp;', ' ', $request->content)
         ]);
 
@@ -136,15 +138,15 @@ class ArticlesController extends Controller
     public function kill($id)
     {
         $thumbnail = Article::onlyTrashed()->where('id', $id)->get('thumbnail');
-        $file = public_path('/').$thumbnail[0]->thumbnail;
-        if(file_exists($file)){
+        $file = public_path('/') . $thumbnail[0]->thumbnail;
+        if (file_exists($file)) {
             @unlink($file);
         }
         Article::onlyTrashed()->where('id', $id)->forceDelete();
         return redirect()->back()->with('success', 'Article deleted!');
     }
     public function restore($id)
-    {   
+    {
         Article::onlyTrashed()->where('id', $id)->restore();
         return redirect()->back()->with('success', 'Article restored!');
     }

@@ -24,7 +24,7 @@
     </div>
 
     <select class="form-select my-3 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
-        <option value="" selected>--- Select Author ---</option>
+        <option value="{{ $article->author }}" selected>--- Select Author ---</option>
         <option value="Khoirul Roziq">Khoirul Roziq</option>
         <option value="Andika Pratama">Andika Pratama</option>
     </select>
@@ -33,6 +33,8 @@
         {{ $message }}
         @enderror
     </div>
+
+    <img src="{{ asset($article->thumbnail) }}" class="img-thumbnail" alt="thumbnail" width="400">
 
     <div class="mb-3">
         <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" id="thumbnail" name="thumbnail">
