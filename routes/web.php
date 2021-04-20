@@ -45,6 +45,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/dashboard', DashboardsController::class);
     // Articles Controller
 
+    Route::get('/articles/archive', [ArticlesController::class, 'archive']);
+    Route::get('/articles/kill/{id}', [ArticlesController::class, 'kill']);
+    Route::get('/articles/restore/{id}', [ArticlesController::class, 'restore']);
     Route::resource('/articles', ArticlesController::class);
 
     // Menus Controller

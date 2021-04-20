@@ -26,7 +26,11 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <a type="button" class="btn btn-primary" href="{{ url('articles/' . $article->id . '/edit') }}">Edit</a>
-                            <button type="button" class="btn btn-warning">Archieve</button>
+                            <form action="{{url('articles/'.$article->id)}}" method='post' class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-warning">Archive</button>
+                            </form>
                         </div>
                     </td>
                 </tr>

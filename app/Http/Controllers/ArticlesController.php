@@ -25,6 +25,11 @@ class ArticlesController extends Controller
         return view('customers.article.index', compact('articles'));
     }
 
+    public function archive()
+    {
+        $articles = Article::onlyTrashed()->get();
+        return view('administrators.articles.trash', compact('articles'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -58,7 +63,7 @@ class ArticlesController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->back()->with('success', 'Successful article create!');
+        return redirect()->back()->with('success', 'Article created!');
     }
 
     /**
@@ -93,7 +98,29 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'thumbnail' => 'required',
+            'content' => 'required'
+        ]);
+        
+        $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
+        $file = public_path('/').$thumbnail[0]->thumbnail;
+        if(file_exists($file)){
+            @unlink($file);
+        }
+
+        Article::where('id', $id)
+        ->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'author' => $request->author,
+            'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back()->with('success', 'Article updated!');
     }
 
     /**
@@ -104,6 +131,22 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Article archived!');
+    }
+    public function kill($id)
+    {
+        $thumbnail = Article::onlyTrashed()->where('id', $id)->get('thumbnail');
+        $file = public_path('/').$thumbnail[0]->thumbnail;
+        if(file_exists($file)){
+            @unlink($file);
+        }
+        Article::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'Article deleted!');
+    }
+    public function restore($id)
+    {   
+        Article::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'Article restored!');
     }
 }
