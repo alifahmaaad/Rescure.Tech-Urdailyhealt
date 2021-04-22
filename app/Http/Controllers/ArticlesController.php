@@ -24,6 +24,11 @@ class ArticlesController extends Controller
         $articles = Article::all();
         return view('customers.article.index', compact('articles'));
     }
+    public function showarticle($id)
+    {
+        $articles = Article::findorfail($id);
+        return view('customers.article.showarticle', compact('articles'));
+    }
 
     public function archive()
     {

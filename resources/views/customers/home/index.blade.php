@@ -88,8 +88,8 @@
             <div class="row featurette">
                 <div class="col-md-8 order-md-1 homearticle">
                     <h2 class="py-3 text">{{ $article->title }}</h2>
-                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}</p>
-                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
+                    <div class="hiddentext">{!! html_entity_decode($article->content )!!}</div>
+                    <p class="link readmore"><a href="{{url('article/'.$article->id)}}" class="link">Read More...</a></p>
                 </div>
                 <div class="col-md-4 order-md-2">
                     <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">
@@ -101,8 +101,8 @@
             <div class="row featurette">
                 <div class="col-md-8 order-md-2 homearticle">
                     <h2 class="py-3 text">{{ $article->title }}</h2>
-                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}</p>
-                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
+                    <div class="hiddentext">{!! html_entity_decode($article->content )!!}</div>
+                    <p class="link readmore"><a href="{{url('article/'.$article->id)}}" class="link">Read More...</a></p>
                 </div>
                 <div class="col-md-4 order-md-1">
                     <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto responsive" src="{{ asset($article->thumbnail) }}" alt="">

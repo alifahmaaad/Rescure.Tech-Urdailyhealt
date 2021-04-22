@@ -40,6 +40,7 @@ Route::get('/faq', function () {
 //     return view('customers/article/index');
 // });
 Route::get('/article', [ArticlesController::class, 'costumerindex']);
+Route::get('/article/{id}', [ArticlesController::class, 'showarticle'])->name('article');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/dashboard', DashboardsController::class);
