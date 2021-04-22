@@ -24,7 +24,7 @@
     </div>
 
     <select class="form-select my-3 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
-        <option value="" selected>--- Select Author ---</option>
+        <option value="" disabled selected>--- Select Author ---</option>
         <option value="Khoirul Roziq">Khoirul Roziq</option>
         <option value="Andika Pratama">Andika Pratama</option>
     </select>
@@ -43,8 +43,7 @@
         @enderror
     </div>
 
-    <textarea name="content" id="editor">
-        &lt;p&gt;This is some sample content.&lt;/p&gt;
+    <textarea name="content" id="editor" placeholder="Input the article paragraph here">
     </textarea>
 
     <div class="form-group mt-3">

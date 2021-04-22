@@ -12,6 +12,7 @@
                 <tr>
                     <th scope="col">Numb</th>
                     <th scope="col">Menu</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Day</th>
                     <th scope="col">Lunch / Dinner</th>
                     <th scope="col">Description</th>
@@ -24,6 +25,7 @@
                 <tr>
                     <th scope="col">{{$loop->iteration}}</th>
                     <td>{{$menu->menu}}</td>
+                    <td>{{$menu->date}}</td>
                     <td>{{$menu->day}}</td>
                     <td>{{$menu->type}}</td>
                     <td>{{$menu->description}}</td>

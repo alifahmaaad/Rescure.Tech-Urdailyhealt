@@ -23,8 +23,15 @@
         @enderror
     </div>
 
+    <input class="form-control my-3 @error('date') is-invalid @enderror" type="date" id="date" name="date" aria-label="default input example">
+    <div class="invalid-feedback">
+        @error('date')
+        {{ $message }}
+        @enderror
+    </div>
+
     <select class="form-select my-3 @error('day') is-invalid @enderror" aria-label="Default select example" id="day" name="day">
-        <option value="" selected>--- Select Day ---</option>
+        <option value="" disabled selected>--- Select Day ---</option>
         <option value="Senin">Senin</option>
         <option value="Selasa">Selasa</option>
         <option value="Rabu">Rabu</option>
@@ -40,7 +47,7 @@
     </div>
 
     <select class="form-select my-3 @error('type') is-invalid @enderror" aria-label="Default select example" id="type" name="type">
-        <option value="" selected>--- Select Type ---</option>
+        <option value="" disabled selected>--- Select Type ---</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
     </select>

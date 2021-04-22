@@ -47,7 +47,8 @@ class MenusController extends Controller
             'day' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'date' => 'required'
         ]);
 
         Menu::create([
@@ -55,7 +56,8 @@ class MenusController extends Controller
             'day' => $request->day,
             'type' => $request->type,
             'description' => $request->description,
-            'price' => $request->price
+            'price' => $request->price,
+            'date' => $request->date
         ]);
 
         return redirect()->back()->with('success', 'Menu created!');
@@ -98,7 +100,8 @@ class MenusController extends Controller
             'day' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'date' => 'required'
         ]);
 
         Menu::where('id', $id)
@@ -107,7 +110,8 @@ class MenusController extends Controller
             'day' => $request->day,
             'type' => $request->type,
             'description' => $request->description,
-            'price' => $request->price
+            'price' => $request->price,
+            'date' => $request->date
         ]);
 
         return redirect()->back()->with('success', 'Menu updated!');
