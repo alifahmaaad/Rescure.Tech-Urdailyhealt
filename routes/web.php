@@ -26,19 +26,21 @@ use App\Http\Controllers\CustomerHomesController;
 // Route::get('/', function () {
 //     return view('customers/home/index');
 // });
+// Route::get('/pricelist', function () {
+//     return view('customers/pricelist/index');
+// });
+// Route::get('/article', function () {
+//     return view('customers/article/index');
+// });
+
 Route::get('/', [CustomerHomesController::class, 'index']);
-Route::get('/pricelist', function () {
-    return view('customers/pricelist/index');
-});
+Route::get('/pricelist', [MenusController::class, 'pricelistcustomer']);
 Route::get('/about_us', function () {
     return view('customers/about_us/index');
 });
 Route::get('/faq', function () {
     return view('customers/faq/index');
 });
-// Route::get('/article', function () {
-//     return view('customers/article/index');
-// });
 Route::get('/article', [ArticlesController::class, 'costumerindex']);
 Route::get('/article/{id}', [ArticlesController::class, 'showarticle'])->name('article');
 
