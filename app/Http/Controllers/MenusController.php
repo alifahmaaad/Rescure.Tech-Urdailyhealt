@@ -44,8 +44,8 @@ class MenusController extends Controller
             $awal = date('Y-m-d', strtotime('-5 days'));
             $terakhir = date('Y-m-d', strtotime('+1 days'));
         }
-        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
-        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
 
 
         return view('customers.pricelist.index', compact(['lunchs', 'dinners']));

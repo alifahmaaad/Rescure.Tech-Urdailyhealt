@@ -33,9 +33,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <li style="list-style-type: none;">Admin 1 : <a style="float:right" class="btn btn-success btn-sm rounded-pill " href="https://web.whatsapp.com/send/?phone=6282289229300&text=Halo+Kak%2C+saya+mau+order%0A%0ANama+%3A%0AAlamat+lunch+%3A%0AAlamat+dinner+%3A%0ANo+HP+%3A%0AMenu+%3A+Lunch+%2F+Dinner%0A+++++++++++++Weekly+%2F+Daily%0A%0Aps+%3A+order+maksimal+H-1+ya+kak%0A%0ATerimakasih&app_absent=0" target="_blank">Contact</a></li>
-                </br>
-                <li style="list-style-type: none;">Admin 2 : <a style="float:right" class="btn btn-success btn-sm rounded-pill " href="https://web.whatsapp.com/send/?phone=6282386984627&text=Halo+Kak%2C+saya+mau+order%0A%0ANama+%3A%0AAlamat+lunch+%3A%0AAlamat+dinner+%3A%0ANo+HP+%3A%0AMenu+%3A+Lunch+%2F+Dinner%0A+++++++++++++Weekly+%2F+Daily%0A%0Aps+%3A+order+maksimal+H-1+ya+kak%0A%0ATerimakasih&app_absent=0" target="_blank">Contact</a></li>
+                <p class="pb-2">Admin 1 : <a class="btn  btn-outline-light wa1" target="_blank" style="background-color: #25d366;" href="https://api.whatsapp.com/send/?phone=6282289229300&text=Halo+Kak%2C+saya+mau+order%0A%0ANama+%3A%0AAlamat+lunch+%3A%0AAlamat+dinner+%3A%0ANo+HP+%3A%0AMenu+%3A+Lunch+%2F+Dinner%0A+++++++++++++Weekly+%2F+Daily%0A%0Aps+%3A+order+maksimal+H-1+ya+kak%0A%0ATerimakasih&app_absent=0"><i class="fab fa-whatsapp"></i> Whatsapp 1</a></p>
+                <p class="pb-2">Admin 2 : <a class="btn  btn-outline-light wa2" target="_blank" style="background-color: #25d366;" href="https://api.whatsapp.com/send/?phone=6282386984627&text=Halo+Kak%2C+saya+mau+order%0A%0ANama+%3A%0AAlamat+lunch+%3A%0AAlamat+dinner+%3A%0ANo+HP+%3A%0AMenu+%3A+Lunch+%2F+Dinner%0A+++++++++++++Weekly+%2F+Daily%0A%0Aps+%3A+order+maksimal+H-1+ya+kak%0A%0ATerimakasih&app_absent=0"><i class="fab fa-whatsapp"></i> Whatsapp 2</a></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>

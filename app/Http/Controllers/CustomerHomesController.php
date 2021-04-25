@@ -13,9 +13,9 @@ class CustomerHomesController extends Controller
     {
 
         $articles = Article::all()->take(2);
-        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->whereDate('date', '=', date('Y-m-d', strtotime('tomorrow')))->take(1)->get();
-        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->whereDate('date', '=', date('Y-m-d', strtotime('tomorrow')))->take(1)->get();
-        $testi = DB::table('testi')->get();
+        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->where('deleted_at', '=', null)->whereDate('date', '=', date('Y-m-d', strtotime('tomorrow')))->take(1)->get();
+        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->where('deleted_at', '=', null)->whereDate('date', '=', date('Y-m-d', strtotime('tomorrow')))->take(1)->get();
+        $testi = DB::table('testi')->where('deleted_at', '=', null)->get();
 
         return view('customers.home.index', compact(['articles', 'lunchs', 'dinners', 'testi']));
     }
