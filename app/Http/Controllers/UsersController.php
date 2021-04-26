@@ -25,7 +25,7 @@ class UsersController extends Controller
     public function archive()
     {
         // $users = User::onlyTrashed()->get();
-        $users = User::all();
+        $users = User::onlyTrashed()->get();
         return view('administrators.users.trash', compact('users'));
     }
     /**
@@ -47,7 +47,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
 
-        return User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password)
@@ -98,6 +98,19 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'User archived!');
+    }
+
+    public function kill($id)
+    {
+        User::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'User deleted!');
+    }
+
+    public function restore($id)
+    {
+        User::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'User restored!');
     }
 }

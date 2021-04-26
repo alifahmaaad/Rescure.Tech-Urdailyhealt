@@ -24,8 +24,12 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
+                            <a type="button" class="btn btn-primary" href="{{ url('users/' . $user->id . '/edit') }}">Edit</a>
+                            <form action="{{url('users/'.$user->id)}}" method='post' class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-warning">Archive</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
