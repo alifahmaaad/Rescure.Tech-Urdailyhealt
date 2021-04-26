@@ -8,14 +8,14 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href="https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet">
 
     <title>Login Admin</title>
 </head>
 
-<body style="background-color: #f1bbbc;">
+<body>
 
-    <main class="form-signin text-center" style="background-color: white;width:50%;height:50%;border-radius:10px;">
+    <main class="form-signin text-center">
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
