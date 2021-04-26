@@ -15,6 +15,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
+        // $user = auth()->user();
+        // return $user->name;
         $articles = Article::all();
         return view('administrators.articles.index', compact('articles'));
     }
@@ -55,14 +57,13 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'author' => 'required',
             'thumbnail' => 'required',
             'content' => 'required'
         ]);
         $article = Article::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
-            'author' => $request->author,
+            'author' => auth()->user()->name,
             'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
             'content' => str_replace('&nbsp;', ' ', $request->content)
         ]);
@@ -104,7 +105,6 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'author' => 'required',
             'content' => 'required'
         ]);
 
@@ -122,7 +122,7 @@ class ArticlesController extends Controller
         Article::where('id', $id)->update([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
-            'author' => $request->author,
+            'author' => auth()->user()->name,
             'content' => str_replace('&nbsp;', ' ', $request->content)
         ]);
 

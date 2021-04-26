@@ -23,17 +23,6 @@
         @enderror
     </div>
 
-    <select class="form-select my-3 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
-        <option value="" disabled selected>--- Select Author ---</option>
-        <option value="Khoirul Roziq">Khoirul Roziq</option>
-        <option value="Andika Pratama">Andika Pratama</option>
-    </select>
-    <div class="invalid-feedback">
-        @error('author')
-        {{ $message }}
-        @enderror
-    </div>
-
     <div class="mb-3">
         <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" id="thumbnail" name="thumbnail">
     </div>
@@ -43,7 +32,7 @@
         @enderror
     </div>
 
-    <textarea name="content" id="editor" placeholder="Input the article paragraph here">
+    <textarea name="content" id="editor" placeholder="Input the article content here">
     </textarea>
 
     <div class="form-group mt-3">

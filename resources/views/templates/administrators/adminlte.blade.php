@@ -40,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user mr-2"></i>
-                        Hai, Khoirul Roziq
+                        Hai, {{auth()->user()->name}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <a href="#" class="dropdown-item">

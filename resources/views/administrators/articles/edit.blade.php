@@ -24,17 +24,6 @@
         @enderror
     </div>
 
-    <select class="form-select my-3 @error('author') is-invalid @enderror" aria-label="Default select example" id="author" name="author">
-        <option value="{{ $article->author }}" selected>--- Select Author ---</option>
-        <option value="Khoirul Roziq">Khoirul Roziq</option>
-        <option value="Andika Pratama">Andika Pratama</option>
-    </select>
-    <div class="invalid-feedback">
-        @error('author')
-        {{ $message }}
-        @enderror
-    </div>
-
     <img src="{{ asset($article->thumbnail) }}" class="img-thumbnail" alt="thumbnail" width="400">
     
 
