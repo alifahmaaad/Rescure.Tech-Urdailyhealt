@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Jetstream\Jetstream;
 
 class UsersController extends Controller
 {
@@ -31,7 +35,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.users.create');
     }
 
     /**
@@ -42,7 +46,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        return User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->back()->with('success', 'Add User Successed!');
     }
 
     /**

@@ -62,5 +62,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/testi', TestimonialsController::class);
 
     Route::get('/user/archive', [UsersController::class, 'archive']);
-    Route::resource('/user', UsersController::class);
+    Route::resource('/users', UsersController::class);
 });
