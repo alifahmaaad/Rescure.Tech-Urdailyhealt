@@ -9,9 +9,9 @@
             <div class="row ">
                 <div class="col-md-9 order-md-1 ">
                     <h2 class="py-3 text">{{ $article->title }}</h2>
-                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}
-                    </p>
-                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
+                    <div class="hiddentext">{!! html_entity_decode($article->content )!!}
+                    </div>
+                    <p class="link readmore"><a href="{{url('article/'.$article->id)}}" class="link">Read More...</a></p>
                 </div>
                 <div class="col-md-3 order-md-2">
                     <img class="bd-placeholder-img bd-placeholder-img-lg image img-fluid mx-auto responsive pt-3" width="250" height="250" src="{{ asset($article->thumbnail) }}" alt="">
@@ -23,9 +23,9 @@
             <div class="row">
                 <div class="col-md-9 order-md-2 ">
                     <h2 class="py-3  text">{{ $article->title }}</h2>
-                    <p class="hiddentext">{!! html_entity_decode($article->content )!!}
-                    </p>
-                    <p class="link readmore"><a href="" class="link">Read More...</a></p>
+                    <div class="hiddentext">{!! html_entity_decode($article->content )!!}
+                    </div>
+                    <p class="link readmore"><a href="{{url('article/'.$article->id)}}" class="link">Read More...</a></p>
                 </div>
                 <div class="col-md-3 order-md-1">
                     <img class="bd-placeholder-img bd-placeholder-img-lg image img-fluid mx-auto responsive pt-3" width="250" height="250" src="{{ asset($article->thumbnail) }}" alt="">

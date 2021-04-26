@@ -1,7 +1,7 @@
 @include('templates.customers.header')
 
 <div class="container-fluid " style="padding-top: 98px;">
-    <div class="container pt-5 text-center aboutus">
+    <div class="container py-5 text-center aboutus">
         <img class="bd-placeholder-img border rounded-circle" width="250" height="250" src="{{ asset('assets/images/urdailyhealth.png') }}" alt="">
         <h2 class="mt-4 aboutustittle pb-3">Urdaily Health</h2>
         <h4 class="my-2">Visi</h4>

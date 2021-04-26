@@ -36,6 +36,7 @@
     </div>
 
     <img src="{{ asset($article->thumbnail) }}" class="img-thumbnail" alt="thumbnail" width="400">
+    
 
     <div class="mb-3">
         <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" id="thumbnail" name="thumbnail">

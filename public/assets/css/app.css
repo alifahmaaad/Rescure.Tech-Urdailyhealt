@@ -120,21 +120,27 @@ footer {
     margin: 2rem 0;
 }
 .hiddentext,
-.article p {
+.homearticle p {
     text-align: justify;
     display: inline-block;
     max-height: 140px;
+    max-width: 100%;
+    word-wrap: break-word;
     overflow: hidden !important;
-    text-overflow: ellipsis;
+    text-overflow: clip;
+}
+.showarticlecontent {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.article p {
+    overflow: hidden !important;
+    text-overflow: clip;
 }
 
 .homearticle p {
     font-size: 18px;
-    text-align: justify;
-    display: inline-block;
     max-height: 240px;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
 }
 .homearticle .hiddentext {
     max-height: 240px;
@@ -252,8 +258,8 @@ h2 {
     font-weight: bold;
 }
 .owl-nav {
-    margin-top: -12%;
-    padding-bottom: 12%;
+    margin-top: -10%;
+    padding-bottom: 10%;
 }
 .owl-stage-outer {
     width: 90%;
@@ -363,10 +369,6 @@ h2 {
     .pricelistcontent .carousel-inner .carousel-item img {
         height: auto;
     }
-    .owl-nav {
-        margin-top: -25%;
-        padding-bottom: 25%;
-    }
 }
 @media (max-width: 90em) {
     .pricelistcontent .carousel-control-next-icon,
@@ -385,8 +387,8 @@ h2 {
         padding-left: 30px;
     }
     .owl-nav {
-        margin-top: -35%;
-        padding-bottom: 35%;
+        margin-top: -25%;
+        padding-bottom: 25%;
     }
     .carousel-control-prev {
         padding-right: 30px;
@@ -485,6 +487,10 @@ h2 {
 @media (max-width: 23em) {
     .imgswarticle {
         width: 280px;
+    }
+    .owl-nav {
+        margin-top: -40%;
+        padding-bottom: 40%;
     }
 }
 @media (max-width: 22em) {

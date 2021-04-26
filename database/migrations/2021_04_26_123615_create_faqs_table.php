@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenusTable extends Migration
+class CreateFaqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->string('menu');
-            $table->string('day');
-            $table->string('type');
-            $table->string('description');
-            $table->integer('price');
-            $table->date('date');
+            $table->string('question');
+            $table->string('answer');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
@@ -33,6 +29,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('faqs');
     }
 }

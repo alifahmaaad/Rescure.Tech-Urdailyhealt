@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Menu extends Model
-{
+class Faq extends Model{
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['menu', 'day', 'type', 'description', 'price', 'date'];
+    protected $fillable = ['question', 'answer'];
 }

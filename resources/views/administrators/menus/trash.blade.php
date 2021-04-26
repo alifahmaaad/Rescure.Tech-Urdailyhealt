@@ -1,5 +1,5 @@
 @extends('templates.administrators.adminlte')
-@section('title', 'List Archived Menus')
+@section('title', '')
 @section('breadcrumb', 'Menus')
 @section('main')
 <div class="container">

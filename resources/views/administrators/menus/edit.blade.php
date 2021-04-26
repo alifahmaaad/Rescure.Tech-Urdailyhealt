@@ -24,15 +24,25 @@
         @enderror
     </div>
 
+    <input class="form-control my-3 @error('date') is-invalid @enderror" type="date" id="date" name="date" aria-label="default input example" value="{{$menu->date}}">
+    <div class="invalid-feedback">
+        @error('date')
+        {{ $message }}
+        @enderror
+    </div>
+
     <select class="form-select my-3 @error('day') is-invalid @enderror" aria-label="Default select example" id="day" name="day">
-        <option value="" selected>--- Select Day ---</option>
-        <option value="Senin">Senin</option>
-        <option value="Selasa">Selasa</option>
-        <option value="Rabu">Rabu</option>
-        <option value="Kamis">Kamis</option>
-        <option value="Jum'at">Jum'at</option>
-        <option value="Sabtu">Sabtu</option>
-        <option value="Minggu">Minggu</option>
+        <option value="" disabled>--- Select Day ---</option>
+        @php
+         $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu', 'Minggu'];   
+        @endphp
+        @foreach ($days as $day)
+            @if ($day == $menu->day)
+              <option value="{{$day}}" selected>{{$day}}</option>
+            @else
+            <option value="{{$day}}">{{$day}}</option>
+            @endif
+        @endforeach
     </select>
     <div class="invalid-feedback">
         @error('day')
@@ -41,9 +51,17 @@
     </div>
 
     <select class="form-select my-3 @error('type') is-invalid @enderror" aria-label="Default select example" id="type" name="type">
-        <option value="" selected>--- Select Type ---</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Dinner">Dinner</option>
+        <option value="" disabled>--- Select Type ---</option>
+        @php
+          $type = ['Lunch', 'Dinner'];   
+        @endphp
+        @foreach ($type as $t)
+          @if ($t == $menu->type)
+            <option value="{{$t}}" selected>{{$t}}</option>
+          @else
+            <option value="{{$t}}">{{$t}}</option>
+          @endif
+        @endforeach
     </select>
     <div class="invalid-feedback">
         @error('type')

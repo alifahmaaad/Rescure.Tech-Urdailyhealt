@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class MenusController extends Controller
 {
@@ -16,6 +18,37 @@ class MenusController extends Controller
     {
         $menus = Menu::all();
         return view('administrators.menus.index', compact('menus'));
+    }
+    public function pricelistcustomer()
+    {
+        $today = new Carbon();
+        if ($today->dayOfWeek == Carbon::SUNDAY) {
+            $awal = date('Y-m-d', strtotime('tomorrow'));
+            $terakhir = date('Y-m-d', strtotime('+7 days'));
+        } elseif ($today->dayOfWeek == Carbon::MONDAY) {
+            $awal = date('Y-m-d');
+            $terakhir = date('Y-m-d', strtotime('+6 days'));
+        } elseif ($today->dayOfWeek == Carbon::TUESDAY) {
+            $awal = date('Y-m-d', strtotime('-1 days'));
+            $terakhir = date('Y-m-d', strtotime('+5 days'));
+        } elseif ($today->dayOfWeek == Carbon::WEDNESDAY) {
+            $awal = date('Y-m-d', strtotime('-2 days'));
+            $terakhir = date('Y-m-d', strtotime('+4 days'));
+        } elseif ($today->dayOfWeek == Carbon::THURSDAY) {
+            $awal = date('Y-m-d', strtotime('-3 days'));
+            $terakhir = date('Y-m-d', strtotime('+3 days'));
+        } elseif ($today->dayOfWeek == Carbon::FRIDAY) {
+            $awal = date('Y-m-d', strtotime('-4 days'));
+            $terakhir = date('Y-m-d', strtotime('+2 days'));
+        } elseif ($today->dayOfWeek == Carbon::SATURDAY) {
+            $awal = date('Y-m-d', strtotime('-5 days'));
+            $terakhir = date('Y-m-d', strtotime('+1 days'));
+        }
+        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+
+
+        return view('customers.pricelist.index', compact(['lunchs', 'dinners']));
     }
 
     public function archive()
@@ -47,7 +80,8 @@ class MenusController extends Controller
             'day' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'date' => 'required'
         ]);
 
         Menu::create([
@@ -55,7 +89,8 @@ class MenusController extends Controller
             'day' => $request->day,
             'type' => $request->type,
             'description' => $request->description,
-            'price' => $request->price
+            'price' => $request->price,
+            'date' => $request->date
         ]);
 
         return redirect()->back()->with('success', 'Menu created!');
@@ -98,17 +133,19 @@ class MenusController extends Controller
             'day' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'date' => 'required'
         ]);
 
         Menu::where('id', $id)
-        ->update([
-            'menu' => $request->menu,
-            'day' => $request->day,
-            'type' => $request->type,
-            'description' => $request->description,
-            'price' => $request->price
-        ]);
+            ->update([
+                'menu' => $request->menu,
+                'day' => $request->day,
+                'type' => $request->type,
+                'description' => $request->description,
+                'price' => $request->price,
+                'date' => $request->date
+            ]);
 
         return redirect()->back()->with('success', 'Menu updated!');
     }
