@@ -18,6 +18,12 @@ class FaqsController extends Controller
         return view('administrators.faqs.index', compact('faqs'));
     }
 
+    public function archive()
+    {
+        $faqs = Faq::onlyTrashed()->get();
+        return view('administrators.faqs.trash', compact('faqs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -102,6 +108,7 @@ class FaqsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Faq::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'FAQ archived!');
     }
 }
