@@ -168,6 +168,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>
+                                    FAQs
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/faqs')}}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List FAQs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Archive</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users

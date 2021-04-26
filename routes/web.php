@@ -7,6 +7,7 @@ use App\Http\Controllers\MenusController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CustomerHomesController;
+use App\Http\Controllers\FaqsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/testi/kill/{id}', [TestimonialsController::class, 'kill']);
     Route::get('/testi/restore/{id}', [TestimonialsController::class, 'restore']);
     Route::resource('/testi', TestimonialsController::class);
+
+    Route::resource('/faqs', FaqsController::class);
 
     Route::get('/user/archive', [UsersController::class, 'archive']);
     Route::resource('/user', UsersController::class);
