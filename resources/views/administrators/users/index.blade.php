@@ -4,7 +4,7 @@
 @section('main')
 <div class="container">
     <div class="row">
-        <button type="button" class="btn btn-success">Create</button>
+        <a href="{{ url('users/create') }}" type="button" class="btn btn-success">Add User</a>
     </div>
     <div class="row">
         <table class="table table-light table-striped table-hover table-bordered">
@@ -24,8 +24,12 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-warning">Archieve</button>
+                            <a type="button" class="btn btn-primary" href="{{ url('users/' . $user->id . '/edit') }}">Edit</a>
+                            <form action="{{url('users/'.$user->id)}}" method='post' class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-warning">Archive</button>
+                            </form>
                         </div>
                     </td>
                 </tr>

@@ -70,6 +70,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/faqs/archive', [FaqsController::class, 'archive']);
     Route::resource('/faqs', FaqsController::class);
 
-    Route::get('/user/archive', [UsersController::class, 'archive']);
-    Route::resource('/user', UsersController::class);
+    Route::get('/users/restore/{id}', [UsersController::class, 'restore']);
+    Route::get('/users/kill/{id}', [UsersController::class, 'kill']);
+    Route::get('/users/archive', [UsersController::class, 'archive']);
+    Route::resource('/users', UsersController::class);
 });

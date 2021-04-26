@@ -21,8 +21,8 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Restore</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="{{url('users/restore/'.$user->id)}}" class="btn btn-primary">Restore</a>
+                            <a href="{{url('users/kill/'.$user->id)}}" class="btn btn-danger" onsubmit="return confirm('Yakin hapus data?')">Delete</a>
                         </div>
                     </td>
                 </tr>

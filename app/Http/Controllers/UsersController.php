@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Jetstream\Jetstream;
 
 class UsersController extends Controller
 {
@@ -21,7 +25,7 @@ class UsersController extends Controller
     public function archive()
     {
         // $users = User::onlyTrashed()->get();
-        $users = User::all();
+        $users = User::onlyTrashed()->get();
         return view('administrators.users.trash', compact('users'));
     }
     /**
@@ -31,7 +35,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.users.create');
     }
 
     /**
@@ -42,7 +46,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->back()->with('success', 'Add User Successed!');
     }
 
     /**
@@ -87,6 +98,19 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'User archived!');
+    }
+
+    public function kill($id)
+    {
+        User::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'User deleted!');
+    }
+
+    public function restore($id)
+    {
+        User::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'User restored!');
     }
 }
