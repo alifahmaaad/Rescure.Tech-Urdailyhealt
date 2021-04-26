@@ -111,6 +111,11 @@ class FaqsController extends Controller
         Faq::where('id', $id)->delete();
         return redirect()->back()->with('success', 'FAQ archived!');
     }
+    public function kill($id)
+    {
+        Faq::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'FAQ deleted!');
+    }
     public function restore($id)
     {
         Faq::onlyTrashed()->where('id', $id)->restore();

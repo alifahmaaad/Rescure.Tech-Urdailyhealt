@@ -66,6 +66,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('/testi', TestimonialsController::class);
 
     Route::get('/faqs/restore/{id}', [FaqsController::class, 'restore']);
+    Route::get('/faqs/kill/{id}', [FaqsController::class, 'kill']);
     Route::get('/faqs/archive', [FaqsController::class, 'archive']);
     Route::resource('/faqs', FaqsController::class);
 
