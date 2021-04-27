@@ -23,8 +23,8 @@
                     <td>{{$faq->answer}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <a href="{{url('faqs/restore/'.$faq->id)}}" class="btn btn-primary">Restore</a>
-                            <a href="{{url('faqs/kill/'.$faq->id)}}" class="btn btn-danger" onsubmit="return confirm('Yakin hapus data?')">Delete</a>
+                            <a href="{{url('faqs/restore/'.$faq->id)}}" class="btn btn-primary" onclick="return confirm('Yakin kembalikan data?')">Restore</a>
+                            <a href="{{url('faqs/kill/'.$faq->id)}}" class="btn btn-danger" onclick="return confirm('Yakin hapus data?')">Delete</a>
                         </div>
                     </td>
                 </tr>
