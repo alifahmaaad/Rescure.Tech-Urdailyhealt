@@ -17,6 +17,12 @@
     </div>
     @endif
 
+    @if (session('failed'))
+    <div class="alert alert-danger">
+        {{ session('failed') }}
+    </div>
+    @endif
+
     <input class="form-control my-3 @error('menu') is-invalid @enderror" type="text" id="menu" name="menu" placeholder="Menu" aria-label="default input example" value="{{$menu->menu}}">
     <div class="invalid-feedback">
         @error('menu')

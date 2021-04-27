@@ -83,17 +83,46 @@ class MenusController extends Controller
             'price' => 'required',
             'date' => 'required'
         ]);
+        switch($request->day){
+            case "Senin":
+                $dayInEng = 'Mon';
+                break;
+            case "Selasa":
+                $dayInEng = 'Tue';
+                break;
+            case "Rabu":
+                $dayInEng = 'Wed';
+                break;
+            case "Kamis":
+                $dayInEng = 'Thu';
+                break;
+            case "Jum'at":
+                $dayInEng = 'Fri';
+                break;
+            case "Sabtu":
+                $dayInEng = 'Sat';
+                break;
+            case "Minggu":
+                $dayInEng = 'Sun';
+                break;
+        }
+        $dateDayName = date('D', strtotime($request->date));
+        if($dateDayName != $dayInEng){
+            return redirect()->back()->with('failed', 'Date and Day must match!');
+        }
+        else{
+            Menu::create([
+                'menu' => $request->menu,
+                'day' => $request->day,
+                'type' => $request->type,
+                'description' => $request->description,
+                'price' => $request->price,
+                'date' => $request->date
+            ]);
 
-        Menu::create([
-            'menu' => $request->menu,
-            'day' => $request->day,
-            'type' => $request->type,
-            'description' => $request->description,
-            'price' => $request->price,
-            'date' => $request->date
-        ]);
+            return redirect()->back()->with('success', 'Menu created!');
+        }
 
-        return redirect()->back()->with('success', 'Menu created!');
     }
 
     /**
@@ -137,7 +166,35 @@ class MenusController extends Controller
             'date' => 'required'
         ]);
 
-        Menu::where('id', $id)
+        switch($request->day){
+            case "Senin":
+                $dayInEng = 'Mon';
+                break;
+            case "Selasa":
+                $dayInEng = 'Tue';
+                break;
+            case "Rabu":
+                $dayInEng = 'Wed';
+                break;
+            case "Kamis":
+                $dayInEng = 'Thu';
+                break;
+            case "Jum'at":
+                $dayInEng = 'Fri';
+                break;
+            case "Sabtu":
+                $dayInEng = 'Sat';
+                break;
+            case "Minggu":
+                $dayInEng = 'Sun';
+                break;
+        }
+        $dateDayName = date('D', strtotime($request->date));
+        if($dateDayName != $dayInEng){
+            return redirect()->back()->with('failed', 'Date and Day must match!');
+        }
+        else{
+            Menu::where('id', $id)
             ->update([
                 'menu' => $request->menu,
                 'day' => $request->day,
@@ -148,6 +205,7 @@ class MenusController extends Controller
             ]);
 
         return redirect()->back()->with('success', 'Menu updated!');
+        }
     }
 
     /**
