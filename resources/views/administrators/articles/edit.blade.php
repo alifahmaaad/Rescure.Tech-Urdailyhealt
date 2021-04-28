@@ -37,7 +37,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"><i class="material-icons">photo</i></span>
         </div>
-        <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" id="thumbnail" name="thumbnail">
+        <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" id="thumbnail" name="thumbnail" required>
       </div> 
     <div class="invalid-feedback">
         @error('thumbnail')
@@ -45,7 +45,7 @@
         @enderror
     </div>
 
-    <textarea name="content" id="editor">
+    <textarea name="content" id="editor"  placeholder="Input the article content here">
     {{ $article->content }}
     </textarea>
 

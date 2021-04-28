@@ -115,30 +115,49 @@ class ArticlesController extends Controller
         ]);
 
         if ($request->thumbnail) {
-            $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
-            $file = public_path('/') . $thumbnail[0]->thumbnail;
-            if (file_exists($file)) {
-                @unlink($file);
+            $extension = $request->thumbnail->getClientOriginalExtension();
+            if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+                $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
+                $file = public_path('/') . $thumbnail[0]->thumbnail;
+                if (file_exists($file)) {
+                    @unlink($file);
+                }
+                Article::where('id', $id)->update([
+                    'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
+                    'title' => $request->title,
+                    'slug' => Str::slug($request->title),
+                    'author' => auth()->user()->name,
+                    'content' => str_replace('&nbsp;', ' ', $request->content)
+                ]);
+                return redirect()->back()->with('success', 'Article updated!');
             }
-            Article::where('id', $id)->update([
-                'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName())
-            ]);
+            else{
+                return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
+            }
         }
         
-        $extension = $request->thumbnail->getClientOriginalExtension();
-        if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
-            Article::where('id', $id)->update([
-                'title' => $request->title,
-                'slug' => Str::slug($request->title),
-                'author' => auth()->user()->name,
-                'content' => str_replace('&nbsp;', ' ', $request->content)
-            ]);
+        // $extension = $request->thumbnail->getClientOriginalExtension();
+        // if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+        //     Article::where('id', $id)->update([
+        //         'title' => $request->title,
+        //         'slug' => Str::slug($request->title),
+        //         'author' => auth()->user()->name,
+        //         'content' => str_replace('&nbsp;', ' ', $request->content)
+        //     ]);
     
-            return redirect()->back()->with('success', 'Article updated!');
-        }
-        else{
-            return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
-        }
+        //     return redirect()->back()->with('success', 'Article updated!');
+        // }
+        // else{
+        //     return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
+        // }
+        // Article::where('id', $id)->update([
+        //     'title' => $request->title,
+        //     'slug' => Str::slug($request->title),
+        //     'author' => auth()->user()->name,
+        //     'content' => str_replace('&nbsp;', ' ', $request->content)
+        // ]);
+
+        // return redirect()->back()->with('success', 'Article updated!');
     }
 
     /**
