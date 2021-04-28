@@ -17,6 +17,11 @@
         {{ session('success') }}
     </div>
     @endif
+    @if (session('failed'))
+    <div class="alert alert-danger">
+        {{ session('failed') }}
+    </div>
+    @endif
 
     <input class="form-control my-3 @error('title') is-invalid @enderror" type="text" id="title" name="title" placeholder="Article Title" aria-label="default input example" value="{{ $article->title }}">
     <div class="invalid-feedback">

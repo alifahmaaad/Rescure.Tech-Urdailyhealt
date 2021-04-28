@@ -60,15 +60,21 @@ class ArticlesController extends Controller
             'thumbnail' => 'required',
             'content' => 'required'
         ]);
-        $article = Article::create([
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'author' => auth()->user()->name,
-            'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
-            'content' => str_replace('&nbsp;', ' ', $request->content)
-        ]);
-
-        return redirect()->back()->with('success', 'Article created!');
+        $extension = $request->thumbnail->getClientOriginalExtension();
+        if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+            Article::create([
+                'title' => $request->title,
+                'slug' => Str::slug($request->title),
+                'author' => auth()->user()->name,
+                'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
+                'content' => str_replace('&nbsp;', ' ', $request->content)
+            ]);
+    
+            return redirect()->back()->with('success', 'Article created!');
+        }
+        else{
+            return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
+        }
     }
 
     /**
@@ -118,15 +124,21 @@ class ArticlesController extends Controller
                 'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName())
             ]);
         }
-
-        Article::where('id', $id)->update([
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'author' => auth()->user()->name,
-            'content' => str_replace('&nbsp;', ' ', $request->content)
-        ]);
-
-        return redirect()->back()->with('success', 'Article updated!');
+        
+        $extension = $request->thumbnail->getClientOriginalExtension();
+        if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+            Article::where('id', $id)->update([
+                'title' => $request->title,
+                'slug' => Str::slug($request->title),
+                'author' => auth()->user()->name,
+                'content' => str_replace('&nbsp;', ' ', $request->content)
+            ]);
+    
+            return redirect()->back()->with('success', 'Article updated!');
+        }
+        else{
+            return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
+        }
     }
 
     /**
