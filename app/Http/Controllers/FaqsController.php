@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Testi;
-use File;
+use App\Models\Faq;
 
-class TestimonialsController extends Controller
+class FaqsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +14,16 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        $testimonials = Testi::all();
-        return view('administrators.testimonials.index', compact('testimonials'));
+        $faqs = Faq::all();
+        return view('administrators.faqs.index', compact('faqs'));
     }
 
     public function archive()
     {
-        $testimonials = Testi::onlyTrashed()->get();
-        return view('administrators.testimonials.trash', compact('testimonials'));
+        $faqs = Faq::onlyTrashed()->get();
+        return view('administrators.faqs.trash', compact('faqs'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,7 +31,7 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-        return view('administrators.testimonials.create');
+        return view('administrators.faqs.create');
     }
 
     /**
@@ -43,16 +43,16 @@ class TestimonialsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
-            'isi' => 'required',
+            'question' => 'required',
+            'answer' => 'required',
         ]);
 
-        Testi::create([
-            'nama' => $request->nama,
-            'isi' => $request->isi
+        Faq::create([
+            'question' => $request->question,
+            'answer' => $request->answer,
         ]);
 
-        return redirect()->back()->with('success', 'Testi created!');
+        return redirect()->back()->with('success', 'FAQ created!');
     }
 
     /**
@@ -74,9 +74,8 @@ class TestimonialsController extends Controller
      */
     public function edit($id)
     {
-        // return 'ini fungsi edit di testi';  
-        $testi = Testi::findorfail($id);
-        return view('administrators.testimonials.edit', compact('testi'));
+        $faq = Faq::findorfail($id);
+        return view('administrators.faqs.edit', compact('faq'));
     }
 
     /**
@@ -89,17 +88,16 @@ class TestimonialsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required',
-            'isi' => 'required',
+            'question' => 'required',
+            'answer' => 'required',
         ]);
 
-        Testi::where('id', $id)
-        ->update([
-            'nama' => $request->nama,
-            'isi' => $request->isi,
+        Faq::where('id', $id)->update([
+            'question' => $request->question,
+            'answer' => $request->answer,
         ]);
 
-        return redirect()->back()->with('success', 'Testi updated!');
+        return redirect()->back()->with('success', 'FAQ updated!');
     }
 
     /**
@@ -110,19 +108,17 @@ class TestimonialsController extends Controller
      */
     public function destroy($id)
     {
-        Testi::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Testi archived!');
+        Faq::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'FAQ archived!');
     }
-
     public function kill($id)
     {
-        Testi::onlyTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back()->with('success', 'testi deleted!');
+        Faq::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'FAQ deleted!');
     }
-
     public function restore($id)
-    {   
-        Testi::onlyTrashed()->where('id', $id)->restore();
-        return redirect()->back()->with('success', 'Testi restored!');
+    {
+        Faq::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'FAQ restored!');
     }
 }

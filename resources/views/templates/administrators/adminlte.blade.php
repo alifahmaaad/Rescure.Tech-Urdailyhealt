@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>Admin | Urdaily Health</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,15 +19,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('assets/css/adminstyle.css') }}">
 </head>
 
+
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Admin Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-2"></i>
+                        Hai, {{auth()->user()->name}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-cog mr-2"></i> Setting
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <button type="submit" class="dropdown-item underline text-gray-600 hover:text-gray-900">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                            </button>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-light-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ url('/') }}" class="brand-link">
-                <img src="{{ asset('assets/images/logo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Urdaily Health Web</span>
+                <img src="{{ asset('assets/images/urdailyhealth.png') }}" alt="urdailyhealth logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Urdaily Health</span>
             </a>
 
             <!-- Sidebar -->
@@ -38,42 +82,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{ asset('assets/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Khoirul Roziq</a>
+                        <a href="#" class="d-block">Administrator</a>
                     </div>
                 </div>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/dashboard') }}">Dashboard</a>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                            <a class="nav-link active" href="{{ url('/dashboard') }}">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Articles
-                                    <i class="right fas fa-angle-left"></i>
+                                    Dashboard
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ url('/article') }}" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Articles</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                             <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Menus
                                     <i class="right fas fa-angle-left"></i>
@@ -81,23 +107,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/menu') }}" class="nav-link active">
+                                    <a href="{{ url('/menus') }}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>All Menus</p>
+                                        <p>List Menus</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('menus/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                             <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    Tertimonials
+                                    Articles
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/articles') }}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Articles</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('articles/archive') }}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Archive</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Testimonials
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -105,19 +155,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="nav-item">
                                     <a href="{{ url('/testi') }}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>All Testi</p>
+                                        <p>List Testi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('testi/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                             <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>
+                                    FAQs
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/faqs')}}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List FAQs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{url('/faqs/archive')}}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Archive</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users
                                     <i class="right fas fa-angle-left"></i>
@@ -125,23 +199,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/user') }}" class="nav-link active">
+                                    <a href="{{ url('/users') }}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>All Users</p>
+                                        <p>List Users</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{url('users/archive')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Archieves</p>
+                                        <p>Archive</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <p>Logout</p>
-                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -152,10 +221,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @yield('main')
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">@yield('title')</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                <li class="breadcrumb-item active">@yield('breadcrumb')</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    @yield('main')
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                By Rescuer Tech
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
     </div>
     <!-- ./wrapper -->
 

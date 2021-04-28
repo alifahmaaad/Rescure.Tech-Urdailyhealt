@@ -1,4 +1,5 @@
 @extends('templates.administrators.adminlte')
+@section('breadcrumb', 'Articles')
 @section('main')
 <div class="container">
     <div class="row header">
@@ -14,34 +15,24 @@
                     <th scope="col">Picture</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody>
+                @foreach ($articles as $article)
                 <tr>
-                    <th scope="col">1</th>
-                    <td>Lemak Jahat</td>
-                    <td>07/04/2021 19:19:19</td>
-                    <td>Ada gambarnya / nama gambarnya aja</td>
+                    <th scope="col">{{$loop->iteration}}</th>
+                    <td>{{$article->title}}</td>
+                    <td>{{$article->updated_at}}</td>
+                    <td><img src="{{ asset($article->thumbnail) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Restore</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="{{url('articles/restore/'.$article->id)}}" class="btn btn-primary" onclick="return confirm('Yakin kembalikan data?')">Restore</a>
+                            <a href="{{url('articles/kill/'.$article->id)}}" class="btn btn-danger" onclick="return confirm('Yakin hapus data?')">Delete</a>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Junk Food</td>
-                    <td>05/04/2021 12:41:03</td>
-                    <td>Ada gambarnya / nama gambarnya aja</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <button type="button" class="btn btn-primary">Restore</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>   
+                @endforeach
+            </tbody>
         </table>
     </div>
-</div>  
+</div>
 @endsection

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Menu;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class MenusController extends Controller
 {
@@ -13,7 +16,45 @@ class MenusController extends Controller
      */
     public function index()
     {
-        return view('administrators.menus.index');
+        $menus = Menu::all();
+        return view('administrators.menus.index', compact('menus'));
+    }
+    public function pricelistcustomer()
+    {
+        $today = new Carbon();
+        if ($today->dayOfWeek == Carbon::SUNDAY) {
+            $awal = date('Y-m-d', strtotime('tomorrow'));
+            $terakhir = date('Y-m-d', strtotime('+7 days'));
+        } elseif ($today->dayOfWeek == Carbon::MONDAY) {
+            $awal = date('Y-m-d');
+            $terakhir = date('Y-m-d', strtotime('+6 days'));
+        } elseif ($today->dayOfWeek == Carbon::TUESDAY) {
+            $awal = date('Y-m-d', strtotime('-1 days'));
+            $terakhir = date('Y-m-d', strtotime('+5 days'));
+        } elseif ($today->dayOfWeek == Carbon::WEDNESDAY) {
+            $awal = date('Y-m-d', strtotime('-2 days'));
+            $terakhir = date('Y-m-d', strtotime('+4 days'));
+        } elseif ($today->dayOfWeek == Carbon::THURSDAY) {
+            $awal = date('Y-m-d', strtotime('-3 days'));
+            $terakhir = date('Y-m-d', strtotime('+3 days'));
+        } elseif ($today->dayOfWeek == Carbon::FRIDAY) {
+            $awal = date('Y-m-d', strtotime('-4 days'));
+            $terakhir = date('Y-m-d', strtotime('+2 days'));
+        } elseif ($today->dayOfWeek == Carbon::SATURDAY) {
+            $awal = date('Y-m-d', strtotime('-5 days'));
+            $terakhir = date('Y-m-d', strtotime('+1 days'));
+        }
+        $lunchs = DB::table('menus')->where('type', '=', 'Lunch')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+        $dinners = DB::table('menus')->where('type', '=', 'Dinner')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
+
+
+        return view('customers.pricelist.index', compact(['lunchs', 'dinners']));
+    }
+
+    public function archive()
+    {
+        $menus = Menu::onlyTrashed()->get();
+        return view('administrators.menus.trash', compact('menus'));
     }
 
     /**
@@ -23,7 +64,7 @@ class MenusController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrators.menus.create');
     }
 
     /**
@@ -34,7 +75,54 @@ class MenusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'menu' => 'required',
+            'day' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'date' => 'required'
+        ]);
+        switch($request->day){
+            case "Senin":
+                $dayInEng = 'Mon';
+                break;
+            case "Selasa":
+                $dayInEng = 'Tue';
+                break;
+            case "Rabu":
+                $dayInEng = 'Wed';
+                break;
+            case "Kamis":
+                $dayInEng = 'Thu';
+                break;
+            case "Jum'at":
+                $dayInEng = 'Fri';
+                break;
+            case "Sabtu":
+                $dayInEng = 'Sat';
+                break;
+            case "Minggu":
+                $dayInEng = 'Sun';
+                break;
+        }
+        $dateDayName = date('D', strtotime($request->date));
+        if($dateDayName != $dayInEng){
+            return redirect()->back()->with('failed', 'Date and Day must match!');
+        }
+        else{
+            Menu::create([
+                'menu' => $request->menu,
+                'day' => $request->day,
+                'type' => $request->type,
+                'description' => $request->description,
+                'price' => $request->price,
+                'date' => $request->date
+            ]);
+
+            return redirect()->back()->with('success', 'Menu created!');
+        }
+
     }
 
     /**
@@ -56,7 +144,8 @@ class MenusController extends Controller
      */
     public function edit($id)
     {
-        //
+        $menu = Menu::findorfail($id);
+        return view('administrators.menus.edit', compact('menu'));
     }
 
     /**
@@ -68,7 +157,55 @@ class MenusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'menu' => 'required',
+            'day' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'date' => 'required'
+        ]);
+
+        switch($request->day){
+            case "Senin":
+                $dayInEng = 'Mon';
+                break;
+            case "Selasa":
+                $dayInEng = 'Tue';
+                break;
+            case "Rabu":
+                $dayInEng = 'Wed';
+                break;
+            case "Kamis":
+                $dayInEng = 'Thu';
+                break;
+            case "Jum'at":
+                $dayInEng = 'Fri';
+                break;
+            case "Sabtu":
+                $dayInEng = 'Sat';
+                break;
+            case "Minggu":
+                $dayInEng = 'Sun';
+                break;
+        }
+        $dateDayName = date('D', strtotime($request->date));
+        if($dateDayName != $dayInEng){
+            return redirect()->back()->with('failed', 'Date and Day must match!');
+        }
+        else{
+            Menu::where('id', $id)
+            ->update([
+                'menu' => $request->menu,
+                'day' => $request->day,
+                'type' => $request->type,
+                'description' => $request->description,
+                'price' => $request->price,
+                'date' => $request->date
+            ]);
+
+        return redirect()->back()->with('success', 'Menu updated!');
+        }
     }
 
     /**
@@ -79,6 +216,19 @@ class MenusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Menu::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Menu archived!');
+    }
+
+    public function kill($id)
+    {
+        Menu::onlyTrashed()->where('id', $id)->forceDelete();
+        return redirect()->back()->with('success', 'Menu deleted!');
+    }
+
+    public function restore($id)
+    {
+        Menu::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->back()->with('success', 'Menu restored!');
     }
 }

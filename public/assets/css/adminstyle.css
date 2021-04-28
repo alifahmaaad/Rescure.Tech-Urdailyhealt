@@ -1,4 +1,4 @@
-.header {
+/* .header {
     justify-content: center;
 }
 .content-wrapper {
@@ -6,4 +6,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 800px;
+} */
+
+aside {
+    background-color: #f1bbbc;
 }

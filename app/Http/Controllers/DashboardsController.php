@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Menu;
+use App\Models\Article;
+use App\Models\User;
+use App\Models\Testi;
 class DashboardsController extends Controller
 {
     /**
@@ -13,7 +16,13 @@ class DashboardsController extends Controller
      */
     public function index()
     {
-        return view('administrators.dashboard.index');
+        $data = [
+            'menu' => Menu::all()->count(),
+            'article' => Article::all()->count(),
+            'testi' => Testi::all()->count(),
+            'user' => User::all()->count()
+        ];
+        return view('administrators.dashboard.index', compact('data'));
     }
 
     /**

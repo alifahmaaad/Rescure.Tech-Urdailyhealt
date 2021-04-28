@@ -5,153 +5,496 @@
   display: block;
   margin-top: 0; 
 } */
+@import url("https://fonts.googleapis.com/css2?family=Revalia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 @media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-
-  }
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
-
-  
-.btn-secondary:visited{
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+.btn-success {
+    background-color: #0c6146;
+    border-color: #0c6146;
+}
+.btn-success:visited .btn-success:hover,
+.btn-success:active {
+    background-color: #0c6146;
+    border-color: #0c6146;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+.btn-secondary:visited {
+    background-color: #f1bbbc;
+    border-color: #f1bbbc;
+}
+p {
+    margin-bottom: 0;
+}
+.text {
+    font-family: "Pacifico", cursive;
+    color: #115b44;
+}
+.btn-secondary {
+    background-color: #f1bbbc;
+    border-color: #f1bbbc;
+}
+.btn-secondary:active {
     background-color: #f1bbbc;
     border-color: #f1bbbc;
 }
 
 body {
     color: #5a5a5a;
-  }
-  
-  .nav-link{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efefef;
+    text-align: center;
+}
+.nav-link {
     text-decoration: none;
-    color: #335343;
-    font-size: 18px;
-  }
-  .nav-link:hover{
-   color: #74a49c;
-  }
-  
-  /* CUSTOMIZE THE CAROUSEL
+    color: #115b44;
+    font-size: 16px;
+}
+.nav-link:hover {
+    font-weight: bold;
+    color: #74a49c;
+}
+
+/* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
-  
-  /* Carousel base class */
-  /* .carousel {
-  /* margin-bottom: 4rem; */
-  /* } */
-  /* Since positioning the image, we need to help out the caption */
-  .carousel-caption {
+.carousel-caption {
     bottom: 3rem;
     z-index: 10;
-  }
-  
-  /* Declare heights because of positioning of img element */
- #headcarousel {
+}
+
+#headcarousel {
     height: 32rem;
-  }
-  
-  #headcarousel > img {
+}
+
+#headcarousel > img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 32rem;
-  }
-  
-  
-  /* MARKETING CONTENT
-  -------------------------------------------------- */
-  
-  /* Center align the text within the three columns below the carousel */
-  .marketing .col-lg-4 {
-    /* margin-bottom: 1.5rem; */
+}
+
+/* HOME PAGE*/
+.marketing .col-lg-4 {
     text-align: center;
-  }
-  .marketing h2 {
+}
+.marketing h2 {
     font-weight: 400;
-  }
-  /* rtl:begin:ignore */
-  .marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
-  }
-  /* rtl:end:ignore */
-  
-  
-  /* Featurettes
-  ------------------------- */
-  
-  .featurette-divider {
-    margin: 2rem 0; 
-    /* Space out the Bootstrap <hr> more */
-  }
-  
-  /* Thin out the marketing headings */
-  .featurette-heading {
+}
+
+.marketing .col-lg-4 p {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+.featurette-divider {
+    margin: 2rem 0;
+}
+.hiddentext,
+.homearticle p {
+    text-align: justify;
+    display: inline-block;
+    max-height: 140px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow: hidden !important;
+    text-overflow: clip;
+}
+.showarticlecontent {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.article p {
+    overflow: hidden !important;
+    text-overflow: clip;
+}
+
+.homearticle p {
+    font-size: 18px;
+    max-height: 240px;
+}
+.homearticle .hiddentext {
+    max-height: 240px;
+}
+.row p {
+    text-align: justify;
+}
+.carousel-caption p,
+h2 {
+    color: black;
+}
+.carousel-caption h2 {
+    color: black;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(0.3);
+}
+
+.testicontent {
+    top: 50%;
+    text-align: center;
+}
+.captiontesti {
+    margin: auto;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+.testitittle {
     font-weight: 300;
     line-height: 1;
-    /* rtl:remove */
-    letter-spacing: -.05rem;
-  }
-  .carousel-caption p,h2{
-    color:black;
-  }
-  .carousel-caption h2{
-    color:black;
-  }
-  .carousel-control-next-icon,
-.carousel-control-prev-icon {
-  filter: invert(0.3);
+    letter-spacing: -0.05rem;
+    padding-right: 150px;
+    padding-left: 150px;
 }
-  
-  /* RESPONSIVE CSS
+#Testimoni {
+    width: 100%;
+    height: auto;
+}
+#testi {
+    padding-bottom: 10%;
+}
+#Menu {
+    width: 100%;
+    height: 300px;
+    padding-top: 30px;
+}
+.headertesti {
+    padding-bottom: 50px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    color: #115b44;
+}
+.link {
+    text-decoration: none;
+    color: #115b44;
+    font-size: 15px;
+}
+.readmore a {
+    text-align: right;
+}
+.link:hover {
+    color: #74a49c;
+}
+/* END HOME PAGE*/
+
+/* ABOUT US PAGE  */
+.aboutustittle {
+    color: #115b44;
+}
+.aboutus {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.aboutus .contact {
+    padding-bottom: 50px;
+}
+/* END ABOUT US PAGE  */
+
+/* PRICELIST PAGE */
+#pricelist h1 {
+    padding-top: 20px;
+    font-family: "Pacifico", cursive;
+    font-weight: bold;
+    color: #115b44;
+}
+.pricelist .row {
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+.pricelist .row .judul {
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #f1bbbc;
+    text-align: left;
+}
+.pricelist .row .container h2 {
+    font-family: "Revalia", cursive;
+    color: white;
+    font-size: 25px;
+    margin-left: 6%;
+}
+/* .pricelistcontent {
+    padding-left: 250px;
+    padding-right: 250px;
+} */
+
+.pricelistcontent .carousel-inner .carousel-item img {
+    width: 90%;
+    height: auto;
+}
+.owl-carousel .card-title {
+    font-weight: bold;
+}
+.owl-nav {
+    margin-top: -10%;
+    padding-bottom: 10%;
+}
+.owl-stage-outer {
+    width: 90%;
+    margin-left: 5%;
+}
+.owl-carousel {
+    padding-top: 30px;
+}
+.owl-nav button {
+    width: 20px;
+}
+.owl-prev {
+    float: left;
+}
+.owl-next {
+    float: right;
+}
+.owl-item .card {
+    width: 90%;
+}
+/* END PRICELIST PAGE */
+
+/* FAQ PAGE */
+.faq .jdl,
+.article h1 {
+    padding-bottom: 40px;
+    padding-top: 20px;
+    font-family: "Pacifico", cursive;
+    font-weight: bold;
+    color: #115b44;
+}
+.faq .faq-sec .question {
+    border-width: 8px !important;
+    border-color: #f1bbbc !important;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 75px;
+    text-align: left;
+}
+.faq .faq-sec .question .queslogo {
+    width: 8%;
+}
+.faq .faq-sec .question .quescontent p {
+    margin: 0;
+    font-weight: 600;
+}
+.faq .faq-sec .question .queslogo h1 {
+    padding: 0;
+    font-size: 50px;
+    margin-left: 10px;
+    color: #f1bbbc;
+}
+.faq .faq-sec .question .quescontent {
+    width: 92%;
+}
+
+.faq .faq-sec .answer {
+    margin-top: 5px;
+    border-width: 8px !important;
+    border-color: lightgray !important;
+    width: 100%;
+    height: 75px;
+    text-align: left;
+}
+.faq .faq-sec .answer .answlogo {
+    width: 8%;
+}
+.faq .faq-sec .answer .answcontent p {
+    margin: 0;
+    font-weight: 600;
+}
+.faq .faq-sec .answer .answlogo h1 {
+    padding: 0;
+    font-size: 50px;
+    margin-left: 10px;
+    color: lightgray;
+}
+.faq .faq-sec .answer .answcontent {
+    width: 92%;
+}
+.faq .faq-sec {
+    padding-bottom: 30px;
+}
+/* END FAQ PAGE */
+
+/* RESPONSIVE CSS
   -------------------------------------------------- */
-  
-  @media (min-width: 40em) {
+
+@media (min-width: 40em) {
     /* Bump up size of carousel content */
     .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-     
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
     }
     .featurette-heading {
-      font-size: 50px;
+        font-size: 50px;
     }
-    
-  }
-  
-  @media (min-width: 62em) {
+}
+
+@media (min-width: 62em) {
     .featurette-heading {
-      margin-top: 7rem;
+        margin-top: 7rem;
     }
-  }
-  
-  @media (max-width: 40em) {
-    .carousel-caption  {
-   margin-bottom: -40px;
+}
+@media (max-width: 110em) {
+    .pricelistcontent .carousel-inner .carousel-item img {
+        height: auto;
+    }
+}
+@media (max-width: 90em) {
+    .pricelistcontent .carousel-control-next-icon,
+    .pricelistcontent .carousel-control-prev-icon {
+        filter: invert(0);
+    }
+}
+@media (max-width: 62em) {
+    .pricelistcontent .carousel-inner .carousel-item img {
+        width: 75%;
+        height: auto;
+    }
+}
+@media (max-width: 40em) {
+    .carousel-control-next {
+        padding-left: 30px;
+    }
+    .owl-nav {
+        margin-top: -25%;
+        padding-bottom: 25%;
+    }
+    .carousel-control-prev {
+        padding-right: 30px;
+    }
+    .imgswarticle {
+        width: 350px;
+    }
+    .carousel-caption {
+        margin-bottom: -40px;
     }
     .carousel-caption p {
-      font-size: 12px;
-      line-height: 1.4;
+        font-size: 12px;
+        line-height: 1.4;
     }
     #headcarousel {
-      height: 15rem;
-    }
-    
-    #headcarousel > img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 15rem;
+        height: 15rem;
     }
 
-  }
+    #headcarousel > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 15rem;
+    }
+    .testicontent {
+        padding-bottom: 50px;
+    }
+    .captiontesti {
+        margin: auto;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .testitittle {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .headertesti {
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-size: 40px;
+    }
+    .aboutus {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .pricelist .row {
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .pricelist .row .judul {
+        padding: 0;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-align: left;
+    }
+    .pricelist .row .container h2 {
+        font-size: 20px;
+    }
+    .pricelistcontent {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .pricelistcontent .carousel-inner .carousel-item img {
+        height: 400px;
+        width: 250px;
+    }
+
+    .faq .faq-sec .question,
+    .faq .faq-sec .answer {
+        height: 100px;
+    }
+    .faq .faq-sec .question .queslogo {
+        width: 15%;
+    }
+    .faq .faq-sec .question .queslogo h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        color: #f1bbbc;
+    }
+    .faq .faq-sec .question .quescontent {
+        width: 85%;
+    }
+    .faq .faq-sec .answer .answlogo {
+        width: 15%;
+    }
+
+    .faq .faq-sec .answer .answlogo h1 {
+        font-size: 25px;
+        margin-left: 10px;
+    }
+    .faq .faq-sec .answer .answcontent {
+        width: 85%;
+    }
+}
+@media (max-width: 23em) {
+    .imgswarticle {
+        width: 280px;
+    }
+    .owl-nav {
+        margin-top: -40%;
+        padding-bottom: 40%;
+    }
+}
+@media (max-width: 22em) {
+    .imgswarticle {
+        width: 250px;
+    }
+}

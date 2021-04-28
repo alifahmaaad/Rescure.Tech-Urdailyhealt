@@ -1,28 +1,30 @@
 @extends('templates.administrators.adminlte')
-@section('title', 'List Archived Testimonials')
-@section('breadcrumb', 'Testimonials')
+@section('breadcrumb', 'FAQs')
 @section('main')
 <div class="container">
+    <div class="row header">
+        <h1 class="mt-3">Archieved FAQs</h1>
+    </div>
     <div class="row">
         <table class="table table-light table-striped table-hover table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Numb</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Isi</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Answer</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($testimonials as $testi)
+                @foreach ($faqs as $faq)
                 <tr>
                     <th scope="col">{{$loop->iteration}}</th>
-                    <td>{{$testi->nama}}</td>
-                    <td>{{$testi->isi}}</td>
+                    <td>{{$faq->question}}</td>
+                    <td>{{$faq->answer}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
-                            <a href="{{url('testi/restore/'.$testi->id)}}" class="btn btn-primary" onclick="return confirm('Yakin kembalikan data?')">Restore</a>
-                            <a href="{{url('testi/kill/'.$testi->id)}}" class="btn btn-danger" onclick="return confirm('Yakin hapus data?')">Delete</a>
+                            <a href="{{url('faqs/restore/'.$faq->id)}}" class="btn btn-primary" onclick="return confirm('Yakin kembalikan data?')">Restore</a>
+                            <a href="{{url('faqs/kill/'.$faq->id)}}" class="btn btn-danger" onclick="return confirm('Yakin hapus data?')">Delete</a>
                         </div>
                     </td>
                 </tr>
