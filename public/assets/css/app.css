@@ -278,7 +278,7 @@ h2 {
     float: right;
 }
 .owl-item .card {
-    width: 90%;
+    width: 95%;
 }
 /* END PRICELIST PAGE */
 
@@ -296,7 +296,10 @@ h2 {
     border-color: #f1bbbc !important;
     background-color: whitesmoke;
     width: 100%;
-    height: 75px;
+    height: auto;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
     text-align: left;
 }
 .faq .faq-sec .question .queslogo {
@@ -318,10 +321,13 @@ h2 {
 
 .faq .faq-sec .answer {
     margin-top: 5px;
+    margin-bottom: 15px;
     border-width: 8px !important;
     border-color: lightgray !important;
     width: 100%;
-    height: 75px;
+    height: auto;
+    padding-bottom: 5px;
+    padding-top: 5px;
     text-align: left;
 }
 .faq .faq-sec .answer .answlogo {
@@ -329,7 +335,7 @@ h2 {
 }
 .faq .faq-sec .answer .answcontent p {
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 .faq .faq-sec .answer .answlogo h1 {
     padding: 0;
@@ -459,7 +465,7 @@ h2 {
 
     .faq .faq-sec .question,
     .faq .faq-sec .answer {
-        height: 100px;
+        height: auto;
     }
     .faq .faq-sec .question .queslogo {
         width: 15%;

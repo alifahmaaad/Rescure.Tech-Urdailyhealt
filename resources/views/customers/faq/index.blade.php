@@ -5,52 +5,31 @@
 
         <div class="container faq  mb-2 ">
             <h1 class="jdl">Frequently Asked Questions (FAQ)</h1>
+            @foreach($faqs as $faq)
             <section class="faq-sec">
                 <div class="container border-left question">
-                    <div class="row h-100">
+                    <div class="row ">
                         <div class="queslogo align-self-center">
                             <h1>Q.</h1>
                         </div>
                         <div class="quescontent align-self-center">
-                            <p>apakah saya bisa melakukan hal ini dalam waktu 3 hari ya gimana wooowowadandadna widaw</p>
+                            <p class="px-3">{{ $faq->question }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="container border-left answer">
-                    <div class="row h-100">
+                    <div class="row">
                         <div class="answlogo align-self-center">
                             <h1>A.</h1>
                         </div>
                         <div class="answcontent align-self-center">
-                            <p>lorem</p>
+                            <p class="px-3">{{ $faq->answer }}</p>
                         </div>
                     </div>
                 </div>
             </section>
+            @endforeach
 
-
-            <section class="faq-sec">
-                <div class="container border-left question">
-                    <div class="row h-100">
-                        <div class="queslogo align-self-center">
-                            <h1>Q.</h1>
-                        </div>
-                        <div class="quescontent align-self-center">
-                            <p>apakah saya bisa melakukan hal ini dalam waktu 3 hari ya gimana wooowowadandadna widaw</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container border-left answer">
-                    <div class="row h-100">
-                        <div class="answlogo align-self-center">
-                            <h1>A.</h1>
-                        </div>
-                        <div class="answcontent align-self-center">
-                            <p>lorem</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
 </div>
