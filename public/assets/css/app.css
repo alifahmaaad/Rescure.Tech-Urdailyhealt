@@ -299,8 +299,10 @@ h2 {
     height: auto;
     padding-bottom: 5px;
     padding-top: 5px;
-
     text-align: left;
+}
+.faq .faq-sec .question:hover {
+    cursor: pointer;
 }
 .faq .faq-sec .question .queslogo {
     width: 8%;

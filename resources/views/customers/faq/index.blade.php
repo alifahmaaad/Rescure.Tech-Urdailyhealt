@@ -6,34 +6,67 @@
         <div class="container faq  mb-2 ">
             <h1 class="jdl">Frequently Asked Questions (FAQ)</h1>
             @foreach($faqs as $faq)
-            <section class="faq-sec">
-                <div class="container border-left question">
-                    <div class="row ">
-                        <div class="queslogo align-self-center">
-                            <h1>Q.</h1>
-                        </div>
-                        <div class="quescontent align-self-center">
-                            <p class="px-3">{{ $faq->question }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container border-left answer">
-                    <div class="row">
-                        <div class="answlogo align-self-center">
-                            <h1>A.</h1>
-                        </div>
-                        <div class="answcontent align-self-center">
-                            <p class="px-3">{{ $faq->answer }}</p>
+            @if($loop->iteration == 1 )
+            <div id="accordion">
+                <section class="faq-sec">
+                    <div class="container question border-left" id="heading{{ $loop->iteration }}" data-toggle="collapse" data-target="#collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse{{ $loop->iteration }}">
+                        <div class="row ">
+                            <div class="queslogo align-self-center">
+                                <h1>Q.</h1>
+                            </div>
+                            <div class="quescontent align-self-center">
+                                <p class="px-3">{{ $faq->question }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            @endforeach
+                    <div id="collapse{{ $loop->iteration }}" class="collapse show" aria-labelledby="heading{{ $loop->iteration }}" data-parent="#accordion">
+                        <div class="container border-left answer">
+                            <div class="row">
+                                <div class="answlogo align-self-center">
+                                    <h1>A.</h1>
+                                </div>
+                                <div class="answcontent align-self-center">
+                                    <p class="px-3">{{ $faq->answer }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                @else
+
+                <section class="faq-sec">
+                    <div class="container question border-left" id="heading{{ $loop->iteration }}" data-toggle="collapse" data-target="#collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse{{ $loop->iteration }}">
+                        <div class="row ">
+                            <div class="queslogo align-self-center">
+                                <h1>Q.</h1>
+                            </div>
+                            <div class="quescontent align-self-center">
+                                <p class="px-3">{{ $faq->question }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse{{ $loop->iteration }}" class="collapse" aria-labelledby="heading{{ $loop->iteration }}" data-parent="#accordion">
+                        <div class="container border-left answer">
+                            <div class="row">
+                                <div class="answlogo align-self-center">
+                                    <h1>A.</h1>
+                                </div>
+                                <div class="answcontent align-self-center">
+                                    <p class="px-3">{{ $faq->answer }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @endif
+
+                @endforeach
+            </div>
 
         </div>
     </div>
-</div>
 
 
 
-@include('templates.customers.footer')
+    @include('templates.customers.footer')
