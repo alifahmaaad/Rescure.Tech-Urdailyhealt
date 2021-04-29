@@ -63,7 +63,9 @@
 
                 @endforeach
             </div>
-
+            <div class="d-flex justify-content-center   pagination-faq">
+                {{$faqs->render()}}
+            </div>
         </div>
     </div>
 

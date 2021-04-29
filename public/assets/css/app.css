@@ -283,6 +283,23 @@ h2 {
 /* END PRICELIST PAGE */
 
 /* FAQ PAGE */
+.pagination-faq nav {
+    background-color: transparent;
+}
+.pagination-faq nav li a {
+    color: #f1bbbc;
+}
+.pagination-faq nav li :hover {
+    color: #f1bbbc;
+    font-weight: bold;
+    background-color: transparent;
+}
+.page-item.active .page-link {
+    background-color: #f1bbbc !important;
+}
+.page-link {
+    border: 0ch;
+}
 .faq .jdl,
 .article h1 {
     padding-bottom: 40px;

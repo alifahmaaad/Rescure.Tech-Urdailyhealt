@@ -20,7 +20,7 @@ class FaqsController extends Controller
 
     public function customerfaqindex()
     {
-        $faqs = Faq::all();
+        $faqs = Faq::simplePaginate(10);
         return view('customers.faq.index', compact('faqs'));
     }
 
