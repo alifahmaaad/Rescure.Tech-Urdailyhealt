@@ -232,6 +232,10 @@ h2 {
     padding-bottom: 25px;
     padding-top: 25px;
 }
+.pricelist .card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .pricelist .row .judul {
     padding: 0;
     padding-bottom: 10px;
@@ -250,10 +254,6 @@ h2 {
     padding-right: 250px;
 } */
 
-.pricelistcontent .carousel-inner .carousel-item img {
-    width: 90%;
-    height: auto;
-}
 .owl-carousel .card-title {
     font-weight: bold;
 }
@@ -278,7 +278,7 @@ h2 {
     float: right;
 }
 .owl-item .card {
-    width: 95%;
+    width: 90%;
 }
 /* END PRICELIST PAGE */
 
