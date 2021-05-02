@@ -47,6 +47,12 @@ class UsersController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -75,7 +81,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findorfail($id);
+        return view('administrators.users.edit', compact('user'));
     }
 
     /**
@@ -87,7 +94,20 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        User::where('id', $id)
+        ->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->back()->with('success', 'User updated!');
     }
 
     /**
