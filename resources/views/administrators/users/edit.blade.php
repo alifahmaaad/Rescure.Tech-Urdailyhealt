@@ -30,12 +30,14 @@
         @enderror
     </div>
 
+    @if ($user->email != "admin@admin.com")
     <input class="form-control my-3 @error('email') is-invalid @enderror" type="text" id="email" name="email" placeholder="Email" aria-label="default input example" value="{{$user->email}}">
     <div class="invalid-feedback">
         @error('email')
         {{ $message }}
         @enderror
     </div>
+    @endif
 
     <input class="form-control my-3 @error('password') is-invalid @enderror" type="text" id="password" name="password" placeholder="Password" aria-label="default input example">
     <div class="invalid-feedback">
