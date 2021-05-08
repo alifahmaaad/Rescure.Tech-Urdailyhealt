@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 
 <div class="container-fluid text-center" style="background-image: linear-gradient(180deg, #f1bbbc 30%, white);background-size: 100% 30%;background-repeat: no-repeat;" id="pricelist" style="padding-bottom: 40px;">
-  <h1 style="padding-top:100px;padding-bottom:20px ;">Our Pricelist</h1>
+  <h1 style="padding-top:100px;padding-bottom:20px ;">Our Menu on This Week</h1>
   <div class="row">
     <!-- CAROUSEL IMG PRICELIST -->
     <!-- <div id="pricelistcarousel" class="col-lg-4 carousel slide  pricelistcontent pb-3" data-ride="carousel">
@@ -34,19 +34,28 @@
     <div class=" container pricelist mb-2 ">
       <!-- LUNCH -->
       <div class="row pt-0">
-        <div class="container judul"></div>
+        <div class="container judul">
+          <h2 class=" mb-2">Lunch</h2>
+        </div>
         <div class="container">
           <div class="owl-carousel">
-            <img src="{{ asset('assets/images/pricelist1.jpeg') }}" alt="pricelist urdailyhealth">
+            @foreach($lunchs as $lunch)
+            <div class="col">
+              <div class=" card  mb-2">
+                <div class="card-body">
+                  <h4 class="card-title">{{ $lunch->day }}</h4>
+                  <p class="card-text text-center">{{ $lunch->menu }} <br>
+                    {{ $lunch->description }}
+                    <br>
+                    @currency($lunch->price )
+                  </p>
+                </div>
+              </div>
+            </div>
+            @endforeach
             <div class="col"></div>
           </div>
         </div>
-        <div class="container">
-            <div class="owl-carousel">
-              <img src="{{ asset('assets/images/pricelist2.jpeg') }}" alt="pricelist urdailyhealth">
-              <div class="col"></div>
-            </div>
-          </div>
       </div>
       <!-- END LUNCH -->
       <!-- DINNER -->
@@ -56,6 +65,20 @@
         </div>
         <div class="container">
           <div class="owl-carousel">
+            @foreach($dinners as $dinner)
+            <div class="col">
+              <div class=" card  mb-2">
+                <div class="card-body">
+                  <h4 class="card-title">{{ $dinner->day }}</h4>
+                  <p class="card-text text-center">{{ $dinner->menu }} <br>
+                    {{ $dinner->description }}
+                    <br>
+                    @currency($dinner->price )
+                  </p>
+                </div>
+              </div>
+            </div>
+            @endforeach
             <div class="col"></div>
           </div>
         </div>

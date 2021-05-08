@@ -17,7 +17,7 @@
     <!-- Copyright -->
     <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright:
-        <a class="text-white" href="#">UrdailyHealth X RescuerTech</a>
+        <a class="text-white" href="../README.md">UrdailyHealth X RescuerTech</a>
     </div>
     <!-- Copyright -->
 </footer>
