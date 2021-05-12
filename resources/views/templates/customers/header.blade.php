@@ -72,6 +72,9 @@
                                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item px-3">
+                                <a class="nav-link " href="{{ url('menu') }}">Menu</a>
+                            </li>
+                            <li class="nav-item px-3">
                                 <a class="nav-link " href="{{ url('pricelist') }}">Pricelist</a>
                             </li>
                             <li class="nav-item px-3">

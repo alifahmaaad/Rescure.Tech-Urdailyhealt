@@ -18,6 +18,13 @@ class FaqsController extends Controller
         return view('administrators.faqs.index', compact('faqs'));
     }
 
+    public function customerfaqindex()
+    {
+        $faqs = Faq::simplePaginate(10);
+        return view('customers.faq.index', compact('faqs'));
+    }
+
+
     public function archive()
     {
         $faqs = Faq::onlyTrashed()->get();

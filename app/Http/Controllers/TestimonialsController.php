@@ -117,7 +117,7 @@ class TestimonialsController extends Controller
     public function kill($id)
     {
         Testi::onlyTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back()->with('success', 'testi deleted!');
+        return redirect()->back()->with('success', 'Testi deleted!');
     }
 
     public function restore($id)

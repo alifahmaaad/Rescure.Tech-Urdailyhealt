@@ -19,7 +19,7 @@ class MenusController extends Controller
         $menus = Menu::all();
         return view('administrators.menus.index', compact('menus'));
     }
-    public function pricelistcustomer()
+    public function menucustomer()
     {
         $today = new Carbon();
         if ($today->dayOfWeek == Carbon::SUNDAY) {
@@ -48,7 +48,7 @@ class MenusController extends Controller
         $dinners = DB::table('menus')->where('type', '=', 'Dinner')->where('deleted_at', '=', null)->whereDate('date', '>=', $awal)->whereDate('date', '<=', $terakhir)->orderBy('date', 'asc')->get();
 
 
-        return view('customers.pricelist.index', compact(['lunchs', 'dinners']));
+        return view('customers.menu.index', compact(['lunchs', 'dinners']));
     }
 
     public function archive()

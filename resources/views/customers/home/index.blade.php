@@ -65,7 +65,7 @@
                     @currency($lunch->price )
                 </p>
                 @endforeach
-                <p class="text-center pb-4"><a class="btn btn-secondary " href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-4"><a class="btn btn-secondary " href="menu">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
 
             <div class="col-lg-6 text-center ">
@@ -78,7 +78,7 @@
                     @currency($dinner->price )
                 </p>
                 @endforeach
-                <p class="text-center pb-1"><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-1"><a class="btn btn-secondary" href="menu">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
         </div>
         <div class="py-5">

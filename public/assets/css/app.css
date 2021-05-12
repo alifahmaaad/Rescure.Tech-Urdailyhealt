@@ -221,7 +221,7 @@ h2 {
 }
 /* END ABOUT US PAGE  */
 
-/* PRICELIST PAGE */
+/* MENU PAGE */
 #pricelist h1 {
     padding-top: 20px;
     font-family: "Pacifico", cursive;
@@ -231,6 +231,10 @@ h2 {
 .pricelist .row {
     padding-bottom: 25px;
     padding-top: 25px;
+}
+.pricelist .card-body {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .pricelist .row .judul {
     padding: 0;
@@ -250,10 +254,6 @@ h2 {
     padding-right: 250px;
 } */
 
-.pricelistcontent .carousel-inner .carousel-item img {
-    width: 90%;
-    height: auto;
-}
 .owl-carousel .card-title {
     font-weight: bold;
 }
@@ -280,9 +280,34 @@ h2 {
 .owl-item .card {
     width: 90%;
 }
+/* END MENU PAGE */
+
+/* PRICELIST PAGE */
+.container .row .col img {
+    max-width: 300px;
+    border: 1px solid #0c6146;
+    border-radius: 1%;
+}
 /* END PRICELIST PAGE */
 
 /* FAQ PAGE */
+.pagination-faq nav {
+    background-color: transparent;
+}
+.pagination-faq nav li a {
+    color: #f1bbbc;
+}
+.pagination-faq nav li :hover {
+    color: #f1bbbc;
+    font-weight: bold;
+    background-color: transparent;
+}
+.page-item.active .page-link {
+    background-color: #f1bbbc !important;
+}
+.page-link {
+    border: 0ch;
+}
 .faq .jdl,
 .article h1 {
     padding-bottom: 40px;
@@ -296,8 +321,13 @@ h2 {
     border-color: #f1bbbc !important;
     background-color: whitesmoke;
     width: 100%;
-    height: 75px;
+    height: auto;
+    padding-bottom: 5px;
+    padding-top: 5px;
     text-align: left;
+}
+.faq .faq-sec .question:hover {
+    cursor: pointer;
 }
 .faq .faq-sec .question .queslogo {
     width: 8%;
@@ -318,10 +348,13 @@ h2 {
 
 .faq .faq-sec .answer {
     margin-top: 5px;
+    margin-bottom: 15px;
     border-width: 8px !important;
     border-color: lightgray !important;
     width: 100%;
-    height: 75px;
+    height: auto;
+    padding-bottom: 5px;
+    padding-top: 5px;
     text-align: left;
 }
 .faq .faq-sec .answer .answlogo {
@@ -329,7 +362,7 @@ h2 {
 }
 .faq .faq-sec .answer .answcontent p {
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 .faq .faq-sec .answer .answlogo h1 {
     padding: 0;
@@ -459,7 +492,7 @@ h2 {
 
     .faq .faq-sec .question,
     .faq .faq-sec .answer {
-        height: 100px;
+        height: auto;
     }
     .faq .faq-sec .question .queslogo {
         width: 15%;

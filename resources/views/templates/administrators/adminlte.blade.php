@@ -204,12 +204,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>List Users</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{url('users/archive')}}" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Archive</p>
-                                    </a>
-                                </li>
+                                @if (auth()->user()->email == 'admin@admin.com')
+                                    <li class="nav-item">
+                                        <a href="{{url('users/archive')}}" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Archive</p>
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </li>
                     </ul>

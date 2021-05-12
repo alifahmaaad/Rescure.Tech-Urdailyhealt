@@ -25,7 +25,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <a type="button" class="btn btn-primary" href="{{ url('testi/' . $testi->id . '/edit') }}">Edit</a>
-                            <form action="{{url('testi/'.$testi->id)}}" method='post' class="d-inline">
+                            <form action="{{url('testi/'.$testi->id)}}" method='post' class="d-inline" onclick="return confirm('Yakin mengarsipkan data?')">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-warning">Archive</button>

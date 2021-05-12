@@ -18,15 +18,25 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $emailActive = auth()->user()->email;
+        if($emailActive == 'admin@admin.com'){
+            $users = User::all();
+        }
+        else if($emailActive != 'admin@admin.com'){
+            $users = User::where('email', $emailActive)->get();
+        }
         return view('administrators.users.index', compact('users'));
     }
 
     public function archive()
     {
-        // $users = User::onlyTrashed()->get();
-        $users = User::onlyTrashed()->get();
-        return view('administrators.users.trash', compact('users'));
+        if(auth()->user()->email == 'admin@admin.com'){
+            $users = User::onlyTrashed()->get();
+            return view('administrators.users.trash', compact('users'));
+        }
+        else if(auth()->user()->email != 'admin@admin.com'){
+            return redirect()->back();
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -35,7 +45,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('administrators.users.create');
+        $emailActive = auth()->user()->email;
+        if($emailActive == 'admin@admin.com'){
+            return view('administrators.users.create');
+        }
+        else if($emailActive != 'admin@admin.com'){
+            return redirect()->back()->with('failed', 'You do not have the authority to access this feature!');
+        }
     }
 
     /**
@@ -46,6 +62,12 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
         User::create([
             'name' => $request->name,
@@ -75,7 +97,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findorfail($id);
+        return view('administrators.users.edit', compact('user'));
     }
 
     /**
@@ -87,7 +110,34 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::where('id', $id)->get();
+        if($user[0]->email != "admin@admin.com"){
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+            ]);
+    
+            User::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]);
+        }
+        else if($user[0]->email == "admin@admin.com"){
+            $request->validate([
+                'name' => 'required',
+                'password' => 'required',
+            ]);
+    
+            User::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'password' => Hash::make($request->password)
+            ]);
+        }
+        return redirect()->back()->with('success', 'User updated!');
     }
 
     /**
@@ -98,19 +148,37 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'User archived!');
+        $emailActive = auth()->user()->email;
+        if($emailActive == 'admin@admin.com'){
+            User::where('id', $id)->delete();
+            return redirect()->back()->with('success', 'User archived!');
+        }
+        else if($emailActive == 'admin@admin.com'){
+            return redirect()->back()->with('failed', 'You do not have the authority to access this feature!');
+        }
     }
 
     public function kill($id)
     {
-        User::onlyTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back()->with('success', 'User deleted!');
+        $emailActive = auth()->user()->email;
+        if($emailActive == 'admin@admin.com'){
+            User::onlyTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back()->with('success', 'User deleted!');
+        }
+        else if($emailActive == 'admin@admin.com'){
+            return redirect()->back()->with('failed', 'You do not have the authority to access this feature!');
+        }
     }
 
     public function restore($id)
     {
-        User::onlyTrashed()->where('id', $id)->restore();
-        return redirect()->back()->with('success', 'User restored!');
+        $emailActive = auth()->user()->email;
+        if($emailActive == 'admin@admin.com'){
+            User::onlyTrashed()->where('id', $id)->restore();
+            return redirect()->back()->with('success', 'User restored!');
+        }
+        else if($emailActive == 'admin@admin.com'){
+            return redirect()->back()->with('failed', 'You do not have the authority to access this feature!');
+        }
     }
 }

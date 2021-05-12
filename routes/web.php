@@ -33,15 +33,19 @@ use App\Http\Controllers\FaqsController;
 // Route::get('/article', function () {
 //     return view('customers/article/index');
 // });
+// Route::get('/faq', function () {
+//     return view('customers/faq/index');
+// });
 
 Route::get('/', [CustomerHomesController::class, 'index']);
-Route::get('/pricelist', [MenusController::class, 'pricelistcustomer']);
+Route::get('/menu', [MenusController::class, 'menucustomer']);
 Route::get('/about_us', function () {
     return view('customers/about_us/index');
 });
-Route::get('/faq', function () {
-    return view('customers/faq/index');
+Route::get('/pricelist', function () {
+    return view('customers/pricelist/index');
 });
+Route::get('/faq', [FaqsController::class, 'customerfaqindex']);
 Route::get('/article', [ArticlesController::class, 'costumerindex']);
 Route::get('/article/{id}', [ArticlesController::class, 'showarticle'])->name('article');
 
