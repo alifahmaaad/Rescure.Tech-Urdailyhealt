@@ -35,7 +35,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined button group">
                             <a type="button" class="btn btn-primary" href="{{ url('users/' . $user->id . '/edit') }}">Edit</a>
-                            @if (auth()->user()->email == 'admin@admin.com')
+                            @if (auth()->user()->email == 'admin@admin.com' && $user->email != 'admin@admin.com')
                                 <form action="{{url('users/'.$user->id)}}" method='post' class="d-inline" onclick="return confirm('Yakin mengarsipkan data?')">
                                     @method('delete')
                                     @csrf
