@@ -23,7 +23,7 @@
     </div>
     @endif
 
-    <input class="form-control my-3 @error('menu') is-invalid @enderror" type="text" id="menu" name="menu" placeholder="Menu" aria-label="default input example" value="{{$menu->menu}}">
+    <input class="form-control my-3 @error('menu') is-invalid @enderror" type="text" id="menu" name="menu" placeholder="Menu" aria-label="default input example" value="{{$menu->menu}}" maxlength="255">
     <div class="invalid-feedback">
         @error('menu')
         {{ $message }}
@@ -75,14 +75,14 @@
         @enderror
     </div>
 
-    <input class="form-control my-3 @error('description') is-invalid @enderror" type="text" id="description" name="description" placeholder="Description" aria-label="default input example" value="{{$menu->description}}">
+    <input class="form-control my-3 @error('description') is-invalid @enderror" type="text" id="description" name="description" placeholder="Description" aria-label="default input example" value="{{$menu->description}}" maxlength="255">
     <div class="invalid-feedback">
         @error('description')
         {{ $message }}
         @enderror
     </div>
 
-    <input class="form-control my-3 @error('price') is-invalid @enderror" type="text" id="price" name="price" placeholder="Price" aria-label="default input example" value="{{$menu->price}}">
+    <input class="form-control my-3 @error('price') is-invalid @enderror" type="text" id="price" name="price" placeholder="Price" aria-label="default input example" value="{{$menu->price}}" maxlength="11">
     <div class="invalid-feedback">
         @error('price')
         {{ $message }}

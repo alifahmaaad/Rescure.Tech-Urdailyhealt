@@ -36,6 +36,9 @@
             @endif
             @endforeach
         </div>
+        <div class="d-flex justify-content-center   pagination-faq">
+            {{$articles->render()}}
+        </div>
     </div>
 </div>
 

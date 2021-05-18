@@ -23,7 +23,7 @@
     </div>
     @endif
 
-    <input class="form-control my-3 @error('title') is-invalid @enderror" type="text" id="title" name="title" placeholder="Article Title" aria-label="default input example" value="{{ $article->title }}">
+    <input class="form-control my-3 @error('title') is-invalid @enderror" type="text" id="title" name="title" placeholder="Article Title" aria-label="default input example" value="{{ $article->title }}"  maxlength="255">
     <div class="invalid-feedback">
         @error('title')
         {{ $message }}

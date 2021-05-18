@@ -23,7 +23,7 @@ class ArticlesController extends Controller
 
     public function costumerindex()
     {
-        $articles = Article::all();
+        $articles = Article::Paginate(5);
         return view('customers.article.index', compact('articles'));
     }
     public function showarticle($id)
@@ -61,7 +61,7 @@ class ArticlesController extends Controller
             'content' => 'required'
         ]);
         $extension = $request->thumbnail->getClientOriginalExtension();
-        if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+        if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') {
             Article::create([
                 'title' => $request->title,
                 'slug' => Str::slug($request->title),
@@ -69,10 +69,9 @@ class ArticlesController extends Controller
                 'thumbnail' => $request->file('thumbnail')->move('uploads/articles', Str::slug($request->title) . '_' . $request->file('thumbnail')->getClientOriginalName()),
                 'content' => str_replace('&nbsp;', ' ', $request->content)
             ]);
-    
+
             return redirect()->back()->with('success', 'Article created!');
-        }
-        else{
+        } else {
             return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
         }
     }
@@ -116,7 +115,7 @@ class ArticlesController extends Controller
 
         if ($request->thumbnail) {
             $extension = $request->thumbnail->getClientOriginalExtension();
-            if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+            if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') {
                 $thumbnail = Article::withTrashed()->where('id', $id)->get('thumbnail');
                 $file = public_path('/') . $thumbnail[0]->thumbnail;
                 if (file_exists($file)) {
@@ -130,12 +129,11 @@ class ArticlesController extends Controller
                     'content' => str_replace('&nbsp;', ' ', $request->content)
                 ]);
                 return redirect()->back()->with('success', 'Article updated!');
-            }
-            else{
+            } else {
                 return redirect()->back()->with('failed', 'Thumbnail extension must jpg/jpeg/png!');
             }
         }
-        
+
         // $extension = $request->thumbnail->getClientOriginalExtension();
         // if($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
         //     Article::where('id', $id)->update([
@@ -144,7 +142,7 @@ class ArticlesController extends Controller
         //         'author' => auth()->user()->name,
         //         'content' => str_replace('&nbsp;', ' ', $request->content)
         //     ]);
-    
+
         //     return redirect()->back()->with('success', 'Article updated!');
         // }
         // else{

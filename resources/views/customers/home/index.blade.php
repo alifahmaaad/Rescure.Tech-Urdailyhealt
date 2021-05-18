@@ -1,6 +1,6 @@
 @include('templates.customers.header')
-<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 30%, white);background-size: 100% 100%;background-repeat: no-repeat;">
-    <main class="container pt-4">
+<div class="paddingheader" style="background-image: linear-gradient(180deg, #f1bbbc 30%, white);background-size: 100% 15%;background-repeat: no-repeat;">
+    <main class=" pt-1">
         <div id="myCarousel" class="carousel slide py-5" data-ride="carousel">
             </br>
             <div class="carousel-indicators">
@@ -14,6 +14,7 @@
                         <rect width="100%" height="100%" fill="#fff" />
                     </svg>
                     <img class="responsive" src="{{ asset('assets/images/urdailyhealth.png') }}" alt=""></img>
+
                     <!-- <div class="container">
                         <div class="carousel-caption text-start">
                             <h2>Example headline.</h2>
@@ -26,7 +27,7 @@
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <rect width="100%" height="100%" fill="#fff" />
                     </svg>
-                    <img class="responsive" src="" alt="">
+                    <img class="responsive" src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/01/82/07560a8c7a6f607.jpg" alt=""></img>
                     <div class="container">
                     </div>
                 </div>
@@ -65,7 +66,7 @@
                     @currency($lunch->price )
                 </p>
                 @endforeach
-                <p class="text-center pb-4"><a class="btn btn-secondary " href="menu">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-4"><a class="btn btn-secondary " href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
 
             <div class="col-lg-6 text-center ">
@@ -78,7 +79,7 @@
                     @currency($dinner->price )
                 </p>
                 @endforeach
-                <p class="text-center pb-1"><a class="btn btn-secondary" href="menu">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
+                <p class="text-center pb-1"><a class="btn btn-secondary" href="pricelist">See Menu</a> <a class="btn btn-secondary" href="#!" role="button" data-toggle="modal" data-target="#ordermodal">Order Now &raquo;</a> </p>
             </div>
         </div>
         <div class="py-5">
