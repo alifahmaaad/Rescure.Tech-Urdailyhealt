@@ -15,11 +15,11 @@
     </div>
     @endif
 
-    <input type="text" class="form-control my-3" id="name" name="name" placeholder="Long Name">
+    <input type="text" class="form-control my-3" id="name" name="name" placeholder="Long Name" maxlength="255">
 
-    <input type="text" class="form-control my-3" id="email" name="email" placeholder="E-mail">
+    <input type="text" class="form-control my-3" id="email" name="email" placeholder="E-mail" maxlength="255">
 
-    <input type="text" class="form-control my-3" id="password" name="password" placeholder="Password">
+    <input type="text" class="form-control my-3" id="password" name="password" placeholder="Password" maxlength="255">
 
     <div class="form-group mt-3">
         <button class="btn btn-primary btn-block">Create</button>

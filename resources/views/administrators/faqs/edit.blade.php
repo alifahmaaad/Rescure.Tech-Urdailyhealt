@@ -17,14 +17,14 @@
     </div>
     @endif
 
-    <input class="form-control my-3 @error('question') is-invalid @enderror" type="text" id="question" name="question" placeholder="Question" aria-label="default input example" value="{{ $faq->question }}">
+    <input class="form-control my-3 @error('question') is-invalid @enderror" type="text" id="question" name="question" placeholder="Question" aria-label="default input example" value="{{ $faq->question }}" maxlength="255">
     <div class="invalid-feedback">
         @error('question')
         {{ $message }}
         @enderror
     </div>
 
-    <input class="form-control my-3 @error('answer') is-invalid @enderror" type="text" id="answer" name="answer" placeholder="Answer" aria-label="default input example" value="{{ $faq->answer }}">
+    <input class="form-control my-3 @error('answer') is-invalid @enderror" type="text" id="answer" name="answer" placeholder="Answer" aria-label="default input example" value="{{ $faq->answer }}" maxlength="255">
     <div class="invalid-feedback">
         @error('answer')
         {{ $message }}

@@ -23,7 +23,7 @@
     </div>
     @endif
 
-    <input class="form-control my-3 @error('name') is-invalid @enderror" type="text" id="name" name="name" placeholder="Long Name" aria-label="default input example" value="{{$user->name}}">
+    <input class="form-control my-3 @error('name') is-invalid @enderror" type="text" id="name" name="name" placeholder="Long Name" aria-label="default input example" value="{{$user->name}}" maxlength="255">
     <div class="invalid-feedback">
         @error('name')
         {{ $message }}
@@ -31,7 +31,7 @@
     </div>
 
     @if ($user->email != "admin@admin.com")
-    <input class="form-control my-3 @error('email') is-invalid @enderror" type="text" id="email" name="email" placeholder="Email" aria-label="default input example" value="{{$user->email}}">
+    <input class="form-control my-3 @error('email') is-invalid @enderror" type="text" id="email" name="email" placeholder="Email" aria-label="default input example" value="{{$user->email}}" maxlength="255">
     <div class="invalid-feedback">
         @error('email')
         {{ $message }}
@@ -39,7 +39,7 @@
     </div>
     @endif
 
-    <input class="form-control my-3 @error('password') is-invalid @enderror" type="text" id="password" name="password" placeholder="Password" aria-label="default input example">
+    <input class="form-control my-3 @error('password') is-invalid @enderror" type="text" id="password" name="password" placeholder="Password" aria-label="default input example" maxlength="255">
     <div class="invalid-feedback">
         @error('password')
         {{ $message }}
