@@ -11,11 +11,14 @@
                 <section class="faq-sec">
                     <div class="container question border-left" id="heading{{ $loop->iteration }}" data-toggle="collapse" data-target="#collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse{{ $loop->iteration }}">
                         <div class="row ">
-                            <div class="queslogo align-self-center">
+                            <div class="queslogo align-self-center ">
                                 <h1>Q.</h1>
                             </div>
-                            <div class="quescontent align-self-center">
+                            <div class="col-md-10 quescontent align-self-center">
                                 <p class="px-3">{{ $faq->question }}</p>
+                            </div>
+                            <div class="col-md-1 col-icon">
+                                <i class="fas fa-angle-down rotate-icon"></i>
                             </div>
                         </div>
                     </div>
@@ -25,7 +28,7 @@
                                 <div class="answlogo align-self-center">
                                     <h1>A.</h1>
                                 </div>
-                                <div class="answcontent align-self-center">
+                                <div class="col-md-10  answcontent align-self-center">
                                     <p class="px-3">{{ $faq->answer }}</p>
                                 </div>
                             </div>
@@ -38,11 +41,14 @@
                 <section class="faq-sec">
                     <div class="container question border-left" id="heading{{ $loop->iteration }}" data-toggle="collapse" data-target="#collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse{{ $loop->iteration }}">
                         <div class="row ">
-                            <div class="queslogo align-self-center">
+                            <div class="queslogo align-self-center ">
                                 <h1>Q.</h1>
                             </div>
-                            <div class="quescontent align-self-center">
+                            <div class="col-md-10 quescontent align-self-center">
                                 <p class="px-3">{{ $faq->question }}</p>
+                            </div>
+                            <div class="col-md-1 col-icon">
+                                <i class="fas fa-angle-down rotate-icon"></i>
                             </div>
                         </div>
                     </div>
@@ -52,7 +58,7 @@
                                 <div class="answlogo align-self-center">
                                     <h1>A.</h1>
                                 </div>
-                                <div class="answcontent align-self-center">
+                                <div class="col-md-10  answcontent align-self-center">
                                     <p class="px-3">{{ $faq->answer }}</p>
                                 </div>
                             </div>
@@ -68,7 +74,8 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
-    @include('templates.customers.footer')
+@include('templates.customers.footer')

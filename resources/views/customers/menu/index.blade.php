@@ -31,20 +31,20 @@
     <!-- </div> -->
     <!-- END CAROUSEL IMG PRICELIST -->
 
-    <div class=" container pricelist mb-2 ">
+    <div class="container-fluid pricelist mb-2 ">
       <!-- LUNCH -->
       <div class="row pt-0">
-        <div class="container judul">
+        <div class="container-fluid judul">
           <h2 class=" mb-2">Lunch</h2>
         </div>
-        <div class="container">
+        <div class="container-fluid">
           <div class="owl-carousel">
             @foreach($lunchs as $lunch)
             <div class="col">
               <div class=" card  mb-2">
                 <div class="card-body">
                   <h4 class="card-title">{{ $lunch->day }}</h4>
-                  <p class="card-text text-center">{{ $lunch->menu }} <br>
+                  <p class="card-text text-center">{{ $lunch->menu }} <br><br>
                     {{ $lunch->description }}
                     <br>
                     @currency($lunch->price )
@@ -60,17 +60,17 @@
       <!-- END LUNCH -->
       <!-- DINNER -->
       <div class="row">
-        <div class="container judul">
+        <div class="container-fluid judul">
           <h2 class=" mb-2">Dinner</h2>
         </div>
-        <div class="container">
+        <div class="container-fluid">
           <div class="owl-carousel">
             @foreach($dinners as $dinner)
             <div class="col">
               <div class=" card  mb-2">
                 <div class="card-body">
                   <h4 class="card-title">{{ $dinner->day }}</h4>
-                  <p class="card-text text-center">{{ $dinner->menu }} <br>
+                  <p class="card-text text-center">{{ $dinner->menu }} <br><br>
                     {{ $dinner->description }}
                     <br>
                     @currency($dinner->price )
@@ -109,7 +109,7 @@
         nav: false
       },
       1000: {
-        items: 4,
+        items: 5,
         nav: true,
         loop: false
       }
