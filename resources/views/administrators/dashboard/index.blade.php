@@ -24,7 +24,7 @@
       <div class="card text-center" style="width: 18rem;">
         <h1>{{$data['user']}}</h1>
         <p class="card-text">Jumlah User</p>
-        <a href="{{ url('/user') }}" class="btn btn-primary">List Users    </a>
+        <a href="{{ url('/users') }}" class="btn btn-primary">List Users    </a>
       </div>
     </div>
     <div class="col-4">
