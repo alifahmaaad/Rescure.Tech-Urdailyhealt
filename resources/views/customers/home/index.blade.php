@@ -23,18 +23,19 @@
                         </div>
                     </div> -->
                 </div>
-                <div id="headcarousel" class="carousel-item">
+                <!-- <div id="headcarousel" class="carousel-item">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <rect width="100%" height="100%" fill="#fff" />
                     </svg>
                     <img class="responsive" src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/01/82/07560a8c7a6f607.jpg" alt=""></img>
                     <div class="container">
                     </div>
-                </div>
+                </div> -->
                 <div id="headcarousel" class="carousel-item ">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <rect width="100%" height="100%" fill="#fff" />
                     </svg>
+                    <img class="responsive" src="{{ asset('assets/images/urdailyhealth.png') }}" alt=""></img>
 
                 </div>
             </div>

@@ -425,6 +425,9 @@ h2 {
         width: 75%;
         height: auto;
     }
+    .faq .faq-sec .question .quescontent {
+        width: 70%;
+    }
 }
 @media (max-width: 40em) {
     .carousel-control-next {
@@ -513,9 +516,7 @@ h2 {
         margin-left: 10px;
         color: #f1bbbc;
     }
-    .faq .faq-sec .question .quescontent {
-        width: 85%;
-    }
+    
     .faq .faq-sec .answer .answlogo {
         width: 15%;
     }
@@ -536,9 +537,13 @@ h2 {
         margin-top: -50%;
         padding-bottom: 50%;
     }
+    
 }
 @media (max-width: 22em) {
     .imgswarticle {
         width: 250px;
+    }
+    .faq .faq-sec .question .quescontent {
+        width: 65%;
     }
 }

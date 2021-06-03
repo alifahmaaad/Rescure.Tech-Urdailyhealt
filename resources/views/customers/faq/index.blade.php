@@ -17,7 +17,7 @@
                             <div class="col-md-10 quescontent align-self-center">
                                 <p class="px-3">{{ $faq->question }}</p>
                             </div>
-                            <div class="col-md-1 col-icon">
+                            <div class="col col-icon">
                                 <i class="fas fa-angle-down rotate-icon"></i>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                             <div class="col-md-10 quescontent align-self-center">
                                 <p class="px-3">{{ $faq->question }}</p>
                             </div>
-                            <div class="col-md-1 col-icon">
+                            <div class="col col-icon">
                                 <i class="fas fa-angle-down rotate-icon"></i>
                             </div>
                         </div>
